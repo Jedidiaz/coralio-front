@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div class="content_auth">
+  <section class="content_portada_auth">
+    <img src="./assets/img/cover-auth.jpg" alt="">
+  </section>
+  <section class="content_form_auth">
+    <div class="header_form">
+      <img src="./assets/img/coralio_logo.png" alt="" class="logo">
+    </div>
+
+    <div class="body_form">
+      <h2>Ingresa a la plataforma</h2>
+
+      <div class="group_form">
+        <label for="">Correo electronico</label>
+        <input type="text" placeholder="correo@mail.com">
+      </div>
+
+      <div class="group_form">
+        <label for="">Contraseña</label>
+        <input type="password" placeholder="*********">
+      </div>
+
+      <div class="group_btn">
+        <button type="submit">Ingresar</button>
+      </div>
+
+      <div class="option_auth_title">
+        <p>O ingresa con</p>
+        <hr>
+      </div>
+
+      <div class="option_auth_google">
+        <a href="">Ingresa con Google</a>
+      </div>
+
+      <div class="crear_cuenta">
+        <p>¿No tienes una cuenta? <a [routerLink]="['/auth/registro']">Crear una cuenta</a></p>
+      </div>
+    </div>
+  </section>
+</div>
