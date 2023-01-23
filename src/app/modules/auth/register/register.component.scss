@@ -1,0 +1,273 @@
+.content_auth{
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: url('../../../../assets/img/login_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media screen and (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  @media screen and (max-width: 426px) {
+      background-position: right;
+  }
+
+  .content_portada_auth{
+      width: 60%;
+      height: auto;
+      img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          @media screen and (max-width: 1024px) {
+              object-position: center;
+          }
+      }
+
+      @media screen and (max-width: 1024px) {
+          width: 40%;
+      }
+
+      @media screen and (max-width: 768px) {
+          display: none;
+      }
+  }
+
+  .content_form_auth{
+      width: 40%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      padding-bottom: 2rem;
+
+      @media screen and (max-width: 1024px) {
+          width: 60%;
+      }
+
+      @media screen and (max-width: 768px) {
+         width: 75%;
+      }
+
+      @media screen and (max-width: 426px) {
+          width: 90%;
+      }
+
+      .header_form{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 2rem 0;
+
+          .logo{
+              width: 40%;
+              object-fit: contain;
+              height: auto;
+          }
+      }
+
+      .body_form{
+          width: 75%;
+          height: auto;
+          padding: 40px;
+          border-radius: 10px;
+          -webkit-box-shadow: 0 0 37px rgb(8 21 66 / 5%);
+          box-shadow: 0 0 37px rgb(8 21 66 / 5%);
+          margin: 0 auto;
+          background-color: #fff;
+          box-sizing: border-box;
+
+          @media screen and (max-width: 426px) {
+              width: 100%;
+              padding: 30px;
+          }
+
+
+          h2{
+              font-weight: 500;
+              font-size: 1.5rem;
+              color: #1D1D1D;
+              line-height: 1rem;
+          }
+
+          h3{
+              font-weight: 400;
+              font-size: 1rem;
+              color: #616161;
+              line-height: 0;
+              margin-bottom: 2rem;
+          }
+
+          .group_form{
+              margin: 1rem 0;
+              display: flex;
+              flex-direction: column;
+
+              .group_input{
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+
+                  input{
+                      width: 48%;
+
+                      @media screen and (max-width: 426px) {
+                          width: 100%;
+                      }
+                  }
+              }
+
+              label{
+                  font-size: .9rem;
+                  letter-spacing: .5px;
+              }
+
+              input{
+                  margin-top: .4rem;
+                  width: 100%;
+                  background-color: #f3f3ff;
+                  border: 1px solid #efefef;
+                  font-size: .9rem;
+                  color: #898989;
+                  padding: .9rem .7rem;
+                  box-sizing: border-box;
+                  outline: 0;
+                  border-radius: 5px;
+                  letter-spacing: .7px;
+
+                  ::placeholder{
+                      font-size: .9rem;
+                      letter-spacing: 1px;
+                      color: #898989;
+                  }
+              }
+
+              input:hover{
+                  border: 1px solid #D0D0D0;
+              }
+
+              input:focus{
+                  border: 1px solid #D0D0D0;
+              }
+          }
+
+          .group_check{
+              width: 100%;
+              margin: 1rem 0;
+              display: flex;
+              flex-direction: row;
+
+              label{
+                  font-size: .9rem;
+
+                  a{
+                      color:  #94619C;
+                      text-decoration: none;
+                  }
+              }
+          }
+
+          .group_btn{
+              width: 100%;
+              margin-top: 2.5rem;
+
+              button{
+                  display: block;
+                  width: 100%;
+                  text-align: center;
+                  border: 0;
+                  background-color: #b184b9;
+                  color: #fff;
+                  font-size: 1rem;
+                  padding: .7rem 0;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  border-bottom: 2px solid #94619C;
+              }
+
+              button:hover{
+                  transition: all .5s;
+                  background-color: #94619C;
+              }
+          }
+
+          .option_auth_title{
+              width: 100%;
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              p{
+                  font-size: 1rem;
+                  width: 30%;
+                  color: #1D1D1D;
+                  font-weight: 500;
+
+                  @media screen and (max-width: 426px) {
+                      width: 45%;
+                  }
+              }
+
+              hr{
+                  width: 70%;
+                  border: .5px solid #EEEEEE;
+
+                  @media screen and (max-width: 426px) {
+                      width: 55%;
+                  }
+              }
+          }
+
+          .option_auth_google{
+              width: 100%;
+              margin-top: 1rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              a{
+                  background: #dd4b39;
+                  border-radius: 5px;
+                  color: white;
+                  display: block;
+                  font-weight: 500;
+                  padding: 1.1rem;
+                  text-align: center;
+                  text-decoration: none;
+                  width: 50%;
+              }
+          }
+
+          .crear_cuenta{
+              margin-top: 1.2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              p{
+                  font-size: .9rem;
+                  color: #1D1D1D;
+
+                  a{
+                      color:  #94619C;
+                      text-decoration: none;
+                  }
+              }
+          }
+      }
+  }
+}
+

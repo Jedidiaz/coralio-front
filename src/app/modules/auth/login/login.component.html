@@ -1,0 +1,63 @@
+<div class="content_auth">
+  <section class="content_portada_auth">
+    <img src="./assets/img/cover-auth.jpg" alt="" />
+  </section>
+  <section class="content_form_auth">
+    <div class="header_form">
+      <img src="./assets/img/coralio_logo.png" alt="" class="logo" />
+    </div>
+
+    <div id="options">
+      <div class="body_form" *ngIf="!select" style="padding: 60px 40px;">
+        <h3>Ingresar</h3>
+        <div>
+          <div class="group_btn" style="margin: 0;">
+            <button type="button" (click)="selected()">Ingresar Como cliente</button>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <div style="border-top: 1px solid #b3b3b3;width: 100%;"></div>
+            <p>O</p>
+            <div style="border-top: 1px solid #b3b3b3;width: 100%;"></div>
+          </div>
+          <div class="group_btn" style="margin: 0;">
+            <button type="button">Ingresar Como terapeuta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body_form" *ngIf="select">
+      <h2>Ingresa a la plataforma</h2>
+
+      <div class="group_form">
+        <label for="">Correo electronico</label>
+        <input type="text" placeholder="correo@mail.com" />
+      </div>
+
+      <div class="group_form">
+        <label for="">Contraseña</label>
+        <input type="password" placeholder="*********" />
+      </div>
+
+      <div class="group_btn">
+        <button type="submit">Ingresar</button>
+      </div>
+
+      <div class="option_auth_title">
+        <p>O ingresa con</p>
+        <hr />
+      </div>
+
+      <div class="option_auth_google">
+        <a href="">Ingresa con Google</a>
+      </div>
+
+      <div class="crear_cuenta">
+        <p>
+          ¿No tienes una cuenta?
+          <a [routerLink]="['registro']">Crear una cuenta</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
