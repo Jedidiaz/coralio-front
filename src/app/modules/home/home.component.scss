@@ -1,0 +1,248 @@
+.contentHome section {
+  padding: 10px;
+}
+
+.section1Home {
+  background: linear-gradient(90deg, #f1f0ff 21px, transparent 1%) center,
+  linear-gradient(#eae7ff 21px, transparent 1%) center,
+  rgba(115, 102, 255, 0.34902);
+  background-size: 23px 23px;
+  padding-top: 150px !important;
+}
+
+.contentHome1{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section1Home h1 {
+  font-size: calc(2.375rem + 1.5vw);
+  font-weight: 600;
+  background-image: linear-gradient(
+      rgba(158, 107, 248, 0.5),
+      rgba(119, 101, 250, 0.5)
+    ),
+    url(../../../assets/img/title.gif);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.section1Home p {
+  color: #2b2b2b;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: #a927f9;
+  border: 0;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 6px 20px;
+  letter-spacing: 1px;
+}
+
+.imageSection1 {
+  box-shadow: 0 0 47px 10px rgb(115 102 255 / 10%);
+}
+
+.imageSection1:hover {
+  box-shadow: 0 0 47px 10px rgb(115 102 255 / 50%);
+  cursor: pointer;
+}
+
+
+
+// section 1
+.section2Home{
+  width: 100%;
+  text-align: center;
+  padding: 70px 10px !important;
+
+  h1{
+    font-size: calc(1.875rem + 1.5vw);
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 30px;
+  }
+}
+
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.cards2{
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 47px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards2:hover{
+  transition: .3s ease;
+  transform: scale(1.03);
+}
+
+//  section3
+.section3Home{
+  padding: 0 !important;
+}
+
+.contenedorS3{
+  background-color: #AF81B7;
+  overflow: hidden;
+}
+
+.contentImages{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 660px;
+  gap: 20px;
+  transform: rotate(-20deg);
+}
+
+.iamgesColage{
+  width: 200px;
+  border-radius: 10px;
+}
+
+.iamgesColage:hover{
+  transition: .3s ease;
+  transform: scale(1.03);
+}
+
+.imageS3y4{
+  box-shadow: 0 0 47px 10px rgba(0, 0, 0, 0.1);
+}
+
+// section5
+.contentS3{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 50px 10px;
+
+  h2{
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 30px;
+  }
+
+  p{
+    color: #000;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    li{
+      color: #737171;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+
+  .btn {
+    border-radius: 10px !important;
+    background: linear-gradient(26deg, #7366ff 0%, #a26cf8 100%);
+  }
+}
+
+.questions{
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  h1{
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 30px;
+  }
+
+  .btn{
+    width: 100%;
+    font-size: 18px;
+    background-color: #AF81B7;
+    border: 0;
+    text-align: start;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section1Home{
+    padding-top: 100px !important;
+  }
+  .contentHome1{
+    flex-direction: row;
+    align-items: center;
+    .des{
+      width: 50%;
+
+      p{
+        max-width: 300px;
+      }
+    }
+
+    .img{
+      width: 50%;
+    }
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .section33Home{
+    width: 100%;
+    background-color: #AF81B7;
+
+    .contentImages{
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      width: 100%;
+      .iamgesColage{
+        width: 100%;
+      }
+    }
+  }
+
+  .contentS3{
+    flex-direction: row;
+    padding: 100px 0;
+    .descriptionS3{
+      width: 40%;
+    }
+
+    .contentImageS3{
+      width: 60%;
+    }
+  }
+}
+

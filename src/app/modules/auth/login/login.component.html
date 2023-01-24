@@ -8,39 +8,64 @@
     </div>
 
     <div id="options">
-      <div class="body_form" *ngIf="!select" style="padding: 60px 40px;">
+      <div
+        class="body_form"
+        *ngIf="!select"
+        style="
+          padding: 60px 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        "
+      >
         <h3>Ingresar</h3>
-        <div>
-          <div class="group_btn" style="margin: 0;">
-            <button type="button" (click)="selected()">Ingresar Como cliente</button>
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div class="group_btn" style="margin: 0">
+            <button type="button" (click)="selected()">
+              Ingresar Como cliente
+            </button>
           </div>
-          <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <div style="border-top: 1px solid #b3b3b3;width: 100%;"></div>
-            <p>O</p>
-            <div style="border-top: 1px solid #b3b3b3;width: 100%;"></div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+            "
+          >
+            <div style="border-top: 1px solid #b3b3b3; width: 100%"></div>
+            <p style="margin: 0">O</p>
+            <div style="border-top: 1px solid #b3b3b3; width: 100%"></div>
           </div>
-          <div class="group_btn" style="margin: 0;">
-            <button type="button">Ingresar Como terapeuta</button>
+          <div class="group_btn" style="margin: 0">
+            <button type="button" (click)="selected2()">
+              Ingresar Como terapeuta
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="body_form" *ngIf="select">
+    <form [formGroup]="formLogin" class="body_form" *ngIf="select">
       <h2>Ingresa a la plataforma</h2>
 
       <div class="group_form">
         <label for="">Correo electronico</label>
-        <input type="text" placeholder="correo@mail.com" />
+        <input type="email" placeholder="correo@mail.com" formControlName="email" required />
       </div>
 
       <div class="group_form">
         <label for="">Contraseña</label>
-        <input type="password" placeholder="*********" />
+        <input type="password" placeholder="*********" formControlName="password" required />
       </div>
-
-      <div class="group_btn">
-        <button type="submit">Ingresar</button>
+      <p [style]="{'color': message.color}">{{message.message}}</p>
+<!-- Buton paciente -->
+      <div class="group_btn" *ngIf="!terapeuta">
+        <button type="button" (click)="loginPaciente()" [disabled]="!formLogin.valid">Ingresar</button>
+      </div>
+<!-- Buton terapeuta -->
+      <div class="group_btn" *ngIf="terapeuta">
+        <button type="button" (click)="loginTerapeuta()" [disabled]="!formLogin.valid">Ingresar</button>
       </div>
 
       <div class="option_auth_title">
@@ -55,9 +80,9 @@
       <div class="crear_cuenta">
         <p>
           ¿No tienes una cuenta?
-          <a [routerLink]="['registro']">Crear una cuenta</a>
+          <a [routerLink]="['/register']">Crear una cuenta</a>
         </p>
       </div>
-    </div>
+    </form>
   </section>
 </div>

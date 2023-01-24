@@ -1,0 +1,279 @@
+<app-header-home></app-header-home>
+<div class="contentHome">
+  <section class="section1Home">
+    <div class="contentHome1 container">
+      <div class="des">
+        <h1>Sanamos mente y espíritu</h1>
+        <p>
+          Estás a un paso de empezar a sentirte mejor con tu estabilidad emocional
+          y mental, te invitamos a ser parte de este maravilloso proceso.
+        </p>
+        <button type="button" class="btn btn-primary">Registrarse</button>
+      </div>
+      <div class="img">
+        <img
+          src="../../../assets/img/header.svg"
+          style="width: 100%; border-radius: 10px"
+          class="imageSection1"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="section2Home">
+    <div class="container">
+      <h1>Que ofrecemos</h1>
+      <div class="cards">
+        <div class="cards2">
+          <img
+            src="../../../assets/img/apreciation.png"
+            [style]="styles.styleImages"
+          />
+          <h5>Terapias Individuales</h5>
+        </div>
+        <div class="cards2">
+          <img
+            src="../../../assets/img/pareja.png"
+            [style]="styles.styleImages"
+          />
+          <h5>Terapias en Pareja</h5>
+        </div>
+        <div class="cards2">
+          <img
+            src="../../../assets/img/grupales.png"
+            [style]="styles.styleImages"
+          />
+          <h5>Terapias Grupales</h5>
+        </div>
+        <div class="cards2">
+          <img
+            src="../../../assets/img/upgrade.png"
+            [style]="styles.styleImages"
+          />
+          <h5>Proximamente más servicios</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section33Home">
+    <div class="contenedorS3 container">
+      <div class="contentImages">
+        <img
+          src="../../../assets/img/collage1.png"
+          class="iamgesColage"
+          *ngFor="let imge of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="section3Home">
+    <div class="contentS3 container">
+      <div class="descriptionS3">
+        <h2>Pacientes</h2>
+        <p>
+          ¿Cansado de estar buscando al especialista adecuado para tu salud
+          mental? ¡Haz un breve test y haz match con el terapeuta perfecto para
+          tí! Ajustándose:
+        </p>
+        <ul>
+          <li>A tus necesidades</li>
+          <li>A tu economía</li>
+          <li>A tus gustos</li>
+        </ul>
+        <button class="btn btn-primary" type="button">Registrate ya!</button>
+      </div>
+      <div class="contentImageS3">
+        <img
+          class="imageS3y4"
+          src="../../../assets/img/frame_terapeutasSection3H.png"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- section 4 -->
+  <section class="section3Home" style="background-color: #f7f7fe">
+    <div class="contentS3 container">
+      <div class="descriptionS3">
+        <h2>Pacientes</h2>
+        <p>
+          ¿Cansado de estar buscando al especialista adecuado para tu salud
+          mental? ¡Haz un breve test y haz match con el terapeuta perfecto para
+          tí! Ajustándose:
+        </p>
+        <ul>
+          <li>A tus necesidades</li>
+          <li>A tu economía</li>
+          <li>A tus gustos</li>
+        </ul>
+        <button class="btn btn-primary" type="button">Registrate ya!</button>
+      </div>
+      <div class="contentImageS3">
+        <img
+          class="imageS3y4"
+          src="../../../assets/img/frame_terapeutasSection3H.png"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="section5Home">
+    <div class="questions container">
+      <h1>PREGUNTAS FRECUENTES</h1>
+      <div class="colapseButtons">
+        <p>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            ¿Están certificado los terapeutas?
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            Pero por supuesto, en Coralio tenemos un filtro riguroso de
+            especialistas para solo ofrecer lo mejor de lo mejor, evitando una
+            mala experiencia con tu terapeuta.
+          </div>
+        </div>
+      </div>
+      <div class="colapseButtons">
+        <p>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample1"
+            aria-expanded="false"
+            aria-controls="collapseExample1"
+          >
+            ¿Cuánto dura el proceso terapeutico?
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample1">
+          <div class="card card-body">
+            Aunque el promedio de duración es entre 12-15 semanas (3-4 meses),
+            el tratamiento puede durar años e incluso poco menos al promedio,
+            todo depende a los avances que se den y al compromiso del paciente
+            con el proceso de sanación.
+          </div>
+        </div>
+      </div>
+      <div class="colapseButtons">
+        <p>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample2"
+            aria-expanded="false"
+            aria-controls="collapseExample2"
+          >
+            ¿De cuánto es el precio por consulta?
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample2">
+          <div class="card card-body">
+              El precio varía según el asignado por el terapeuta. Psicólogos que
+            ofrecen sus citas 4 veces al mes podrían cobrar menos por sesión que
+            alguien que ofrece 1 al mes, depende mucho del tratamiento y el
+            terapeuta con el que se esté buscando hacer match.
+          </div>
+        </div>
+      </div>
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              ¿Están certificado los terapeutas?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <p>
+                Pero por supuesto, en Coralio tenemos un filtro riguroso de
+                especialistas para solo ofrecer lo mejor de lo mejor, evitando
+                una mala experiencia con tu terapeuta.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              ¿Cuánto dura el proceso terapeutico?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <p>
+                Aunque el promedio de duración es entre 12-15 semanas (3-4
+                meses), el tratamiento puede durar años e incluso poco menos al
+                promedio, todo depende a los avances que se den y al compromiso
+                del paciente con el proceso de sanación.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              ¿De cuánto es el precio por consulta?
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <p>
+                El precio varía según el asignado por el terapeuta. Psicólogos
+                que ofrecen sus citas 4 veces al mes podrían cobrar menos por
+                sesión que alguien que ofrece 1 al mes, depende mucho del
+                tratamiento y el terapeuta con el que se esté buscando hacer
+                match.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </section>
+</div>
+<app-footer-home></app-footer-home>

@@ -162,6 +162,12 @@
         }
       }
 
+      .group_btn button:disabled{
+        background-color: #b3b3b3;
+        border: 0;
+        cursor: not-allowed;
+      }
+
       .option_auth_title {
         width: 100%;
         margin-top: 1rem;
@@ -206,7 +212,7 @@
           padding: 1.1rem;
           text-align: center;
           text-decoration: none;
-          width: 50%;
+          width: 100%;
         }
       }
 

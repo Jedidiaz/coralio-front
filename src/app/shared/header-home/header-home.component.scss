@@ -1,0 +1,68 @@
+nav{
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 10px;
+  transition: all .3s ease;
+  background-color: transparent;
+  position: fixed;
+  align-items: center;
+  width: 100vw;
+  z-index: 100;
+}
+
+.image{
+  width: 150px;
+}
+
+.buttons{
+  display: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.buttons ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.buttons ul li{
+  display: flex;
+  gap: 10px;
+}
+
+.buttons ul li a{
+  text-decoration: none;
+  font-size: 16px;
+  color: #af81b7;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  padding: 12px 6px;
+}
+
+.buttons .btn{
+  background-color: #fff;
+  border: 0;
+  color: #af81b7;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 8px 25px;
+}
+
+@media screen and (min-width: 1024px) {
+  .buttons {
+    display: flex;
+  }
+
+  nav{
+    padding: 30px;
+  }
+
+  .butonsR{
+    display: none;
+  }
+
+}
