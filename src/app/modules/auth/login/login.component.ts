@@ -52,7 +52,11 @@ export class LoginComponent implements OnInit{
               message: res.message,
               color: 'green'
             }
-            window.location.href = "/cliente"
+            if(res.rol === 'admin'){
+              window.location.href = "/admin"
+            }else {
+              window.location.href = "/cliente"
+            }
           }else {
             this.message = {
               message: res.message,
@@ -77,7 +81,11 @@ export class LoginComponent implements OnInit{
               message: res.message,
               color: 'green'
             }
-            window.location.href = "/terapeuta"
+            if(res.rol === 'admin'){
+              window.location.href = "/admin"
+            }else {
+              window.location.href = "/terapeuta"
+            }
           }else {
             this.message = {
               message: res.message,
