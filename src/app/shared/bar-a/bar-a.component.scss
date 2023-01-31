@@ -1,0 +1,86 @@
+.lateralBar {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  height: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.imageBar {
+  padding: 27px 30px;
+  box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.1);
+}
+
+.listOptions {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  h6 {
+    font-size: 16px;
+    padding: 20px;
+    color: #7366ff;
+    background-color: rgba(115, 102, 255, 0.06);
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      color: #2c323f;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    a:hover {
+      color: #7366ff;
+      background-color: rgba(115, 102, 255, 0.06);
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .activeButton{
+      color: #7366ff;
+      background-color: rgba(115, 102, 255, 0.3);
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+.esconder{
+  display: block;
+  font-size: 20px;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+
+.imageBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .esconder{
+    display: none;
+  }
+}
+

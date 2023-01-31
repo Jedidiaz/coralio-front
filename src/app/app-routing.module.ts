@@ -1,3 +1,5 @@
+import { MainAdminComponent } from './modules/dashboardAdmin/main-admin/main-admin.component';
+import { BarTComponent } from './shared/bar-t/bar-t.component';
 import { MainClienteComponent } from './modules/dashboardCliente/main-cliente/main-cliente.component';
 import { MainTerapeutaComponent } from './modules/dashboardTerapeutas/main-terapeuta/main-terapeuta.component';
 //modules
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent },
   {path: 'cliente', component: MainClienteComponent },
   {path: 'terapeuta', component: MainTerapeutaComponent },
+  {path: 'bar', component: BarTComponent },
+  {path: 'admin', component: MainAdminComponent },
 
 ]
 
@@ -29,4 +33,6 @@ const routes: Routes = [
     RouterModule,
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }

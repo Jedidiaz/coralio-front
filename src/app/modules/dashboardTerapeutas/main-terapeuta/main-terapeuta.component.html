@@ -1,1 +1,15 @@
-<p>main-terapeuta works!</p>
+<div class="content contentMainT">
+  <div class="bar">
+    <app-bar-t (messageEvent)="receiveMessage($event)"></app-bar-t>
+  </div>
+  <div class="contentViews">
+    <app-header-t></app-header-t>
+    <div class="contentDash">
+      <app-inicio *ngIf="recive.inicio"></app-inicio>
+      <app-pacientes *ngIf="recive.pacientes"></app-pacientes>
+      <app-documentos *ngIf="recive.documentos"></app-documentos>
+      <app-tareas *ngIf="recive.tareas"></app-tareas>
+      <app-footer-t></app-footer-t>
+    </div>
+  </div>
+  </div>

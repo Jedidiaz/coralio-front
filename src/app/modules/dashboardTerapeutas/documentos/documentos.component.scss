@@ -1,0 +1,113 @@
+.content {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .route {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    padding: 20px 0;
+
+    p,
+    i {
+      margin: 0;
+      color: #b3b3b3;
+      font-size: 14px;
+    }
+  }
+}
+
+.documentosContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+
+  .pacientes {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+.contenedorPacientes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid #f1f1f1;
+  .cardDoc{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    .img{
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .cardDoc:hover{
+    background-color: #7366ff;
+    cursor: pointer;
+  }
+}
+
+h6, p{
+  font-size: 14px;
+  margin: 0;
+}
+
+.contenedorPacientes::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.contenedorPacientes::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border-radius: 20px;
+}
+
+.pacientesDoc{
+  padding: 20px 0;
+  background-color: #fff;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  .documents{
+    padding: 0 20px;
+
+  }
+
+  h4{
+    margin: 0;
+  }
+  p{
+    color: #b3b3b3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pacientes {
+    width: 40% !important;
+  }
+
+  .pacientesDoc {
+    width: 60%;
+  }
+
+  .documentosContent{
+    flex-direction: row;
+  }
+}

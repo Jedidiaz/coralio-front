@@ -15,6 +15,7 @@
 $coralio-primary: mat.define-palette(mat.$indigo-palette);
 $coralio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
+
 // The warn palette is optional (defaults to red).
 $coralio-warn: mat.define-palette(mat.$red-palette);
 
@@ -34,6 +35,8 @@ $coralio-theme: mat.define-light-theme((
 @include mat.all-component-themes($coralio-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

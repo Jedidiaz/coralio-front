@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="header">
+    <h5>Documentos</h5>
+    <div class="route">
+      <i class="fa-solid fa-house"></i>
+      <p>/ Documentos</p>
+    </div>
+  </div>
+  <div class="documentosContent">
+    <div class="pacientes">
+      <h6 style="font-weight: 600;">Seleccionar Paciente</h6>
+      <p>para visualizar documentos</p>
+      <div class="contenedorPacientes">
+        <div class="cardDoc" *ngFor="let paciente of [1,2,3,4]">
+          <div class="img">
+            <img src="../../../../assets/img/paciente.png" style="width: 100%; border-radius: 50%; object-fit: cover;" >
+          </div>
+          <div class="desc">
+            <h6 style="font-weight: 600;">Nombre Paciente</h6>
+            <p>correo@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pacientesDoc">
+      <br>
+      <hr>
+      <div class="documents">
+        <h4>Paciente: <span>paciente Apellido</span></h4>
+        <p>todos los documentos</p>
+      </div>
+    </div>
+  </div>
+</div>

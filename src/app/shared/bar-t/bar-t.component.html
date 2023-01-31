@@ -1,0 +1,23 @@
+<div class="lateralBar">
+  <div class="imageBar">
+    <img src="../../../../assets/img/coralio_logo.png" style="width: 60%;">
+    <i class="fa-solid fa-chevron-left esconder" (click)="esconder()"></i>
+  </div>
+  <div class="listOptions">
+    <div class="general">
+      <h6>General</h6>
+      <li>
+        <a (click)="goInicio()" [class.activeButton]="inicio"><i class="fa-solid fa-house"></i> Dashboard</a>
+      </li>
+    </div>
+    <div class="modulos">
+      <h6>Modulos</h6>
+      <li>
+        <a (click)="goPacientes()"[class.activeButton]="pacientes"><i class="fa-solid fa-paper-plane"></i>Pacientes</a>
+        <a (click)="goDocumentos()"[class.activeButton]="documentos"><i class="fa-regular fa-file-lines"></i>Documentos Clientes</a>
+        <a (click)="goTareas()" [class.activeButton]="tareas"><i class="fa-solid fa-file-pen"></i>Tareas Pendientes</a>
+        <a (click)="goSesiones()" [class.activeButton]="sesiones"><i class="fa-solid fa-database"></i>Sesiones Pendientes</a>
+      </li>
+    </div>
+  </div>
+</div>

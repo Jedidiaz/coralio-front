@@ -1,0 +1,14 @@
+<div class="content contentMainT">
+  <div class="bar">
+    <app-bar-a (messageEvent)="receiveMessage($event)"></app-bar-a>
+  </div>
+  <div class="contentViews">
+    <app-header-a></app-header-a>
+    <div class="contentDash">
+      <app-terapeutas-admin *ngIf="recive.terapeutas"></app-terapeutas-admin>
+      <app-pacientes-admin *ngIf="recive.pacientes"></app-pacientes-admin>
+      <app-terapias-admin *ngIf="recive.terapias"></app-terapias-admin>
+      <app-footer-t></app-footer-t>
+    </div>
+  </div>
+  </div>

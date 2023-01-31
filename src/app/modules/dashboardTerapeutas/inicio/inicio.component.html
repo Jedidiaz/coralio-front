@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="InicioCitas">
+    <div class="route">
+      <i class="fa-solid fa-house"></i>
+      <p>/ Dasboard</p>
+    </div>
+    <div class="section">
+      <div class="inicioImage body">
+        <img src="../../../../assets/img/inicioT.svg" width="100%" />
+      </div>
+      <div class="calendarinicio body">
+        <p-calendar
+          [(ngModel)]="value"
+          [inline]="true"
+          [showWeek]="true"
+          dateFormat="dd.mm.yy"
+          (onSelect)="click($event)"
+        ></p-calendar>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <span>
+      <h4>10</h4>
+      <p>Cliente</p>
+    </span>
+    <span>
+      <h4>10</h4>
+      <p>Prestador de servicio</p>
+    </span>
+  </div>
+</div>
