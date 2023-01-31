@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor( private http: HttpClient ) { }
 
-  url = 'http://25.65.134.189:9000/api'
+  url = 'https://api-coralio.cmc-software.com/api'
 
   //auth
   loginP(body: FormData):Observable<ResponseAuth>{
