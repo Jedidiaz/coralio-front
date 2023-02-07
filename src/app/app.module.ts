@@ -1,3 +1,7 @@
+//material angular
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //Modules
@@ -37,6 +41,19 @@ import { PacientesAdminComponent } from './modules/dashboardAdmin/pacientes-admi
 import { TerapiasAdminComponent } from './modules/dashboardAdmin/terapias-admin/terapias-admin.component';
 import { HeaderAComponent } from './shared/header-a/header-a.component';
 import { BarAComponent } from './shared/bar-a/bar-a.component';
+import { CreateTerapeutaComponent } from './modules/dashboardAdmin/create-terapeuta/create-terapeuta.component';
+import { BarCComponent } from './shared/bar-c/bar-c.component';
+import { HeaderCComponent } from './shared/header-c/header-c.component';
+import { InicioClienteComponent } from './modules/dashboardCliente/inicio-cliente/inicio-cliente.component';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { ConfirmAlertComponent } from './shared/confirm-alert/confirm-alert.component';
+import { ErrorAlertComponent } from './shared/error-alert/error-alert.component';
+import { FilterPipe } from './shared/pipe/filter.pipe';
+import { CeratePacienteComponent } from './modules/dashboardAdmin/cerate-paciente/cerate-paciente.component';
+import { CerateTerapiaComponent } from './modules/dashboardAdmin/cerate-terapia/cerate-terapia.component';
+import { TerapeutasClienteComponent } from './modules/dashboardCliente/terapeutas-cliente/terapeutas-cliente.component';
+import { TerapiasClienteComponent } from './modules/dashboardCliente/terapias-cliente/terapias-cliente.component';
+import { SesionesClienteComponent } from './modules/dashboardCliente/sesiones-cliente/sesiones-cliente.component';
 
 
 @NgModule({
@@ -64,6 +81,19 @@ import { BarAComponent } from './shared/bar-a/bar-a.component';
     TerapiasAdminComponent,
     HeaderAComponent,
     BarAComponent,
+    CreateTerapeutaComponent,
+    BarCComponent,
+    HeaderCComponent,
+    InicioClienteComponent,
+    ConfirmDialogComponent,
+    ConfirmAlertComponent,
+    ErrorAlertComponent,
+    FilterPipe,
+    CeratePacienteComponent,
+    CerateTerapiaComponent,
+    TerapeutasClienteComponent,
+    TerapiasClienteComponent,
+    SesionesClienteComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,8 +104,11 @@ import { BarAComponent } from './shared/bar-a/bar-a.component';
     SidebarModule,
     CalendarModule,
     FormsModule,
-    TableModule
+    TableModule,
+    MatDialogModule,
+    MatButtonModule
   ],
+  entryComponents: [ConfirmDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

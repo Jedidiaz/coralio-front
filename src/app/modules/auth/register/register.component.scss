@@ -134,7 +134,7 @@
                   letter-spacing: .5px;
               }
 
-              input{
+              input, select{
                   margin-top: .4rem;
                   width: 100%;
                   background-color: #f3f3ff;
@@ -200,6 +200,12 @@
               button:hover{
                   transition: all .5s;
                   background-color: #94619C;
+              }
+
+              button:disabled{
+                background-color: #b3b3b3;
+                border: 0;
+                cursor: default;
               }
           }
 

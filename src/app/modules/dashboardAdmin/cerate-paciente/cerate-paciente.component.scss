@@ -1,0 +1,77 @@
+.contentFormUsers {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+  letter-spacing: 1px;
+}
+
+.formulario {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+
+  .btn{
+    width: 100%;
+  }
+}
+
+.btn-secondary {
+  font-size: 20px;
+  color: #7366ff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+}
+
+.btn-secondary:active {
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 1024px) {
+  .contentFormUsers {
+    padding: 30px;
+  }
+
+  .col {
+    display: flex;
+
+    width: 100%;
+    gap: 20px;
+    span {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .buttons {
+    justify-content: end;
+    .btn {
+      max-width: 150px;
+    }
+  }
+}

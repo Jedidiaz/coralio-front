@@ -1,1 +1,19 @@
-<p>main-cliente works!</p>
+<div class="content contentMainT">
+  <div class="bar">
+    <app-bar-t (messageEvent)="receiveMessage($event)"></app-bar-t>
+  </div>
+  <div class="colorTop"></div>
+  <div class="colorBottom"></div>
+  <div class="contentMainMain">
+    <div class="contentViews">
+      <app-header-c (messageEvent)="receiveMessage($event)"></app-header-c>
+      <div class="contentDash">
+        <app-inicio-cliente *ngIf="recive.inicio"></app-inicio-cliente>
+        <app-terapeutas-cliente *ngIf="recive.terapeutas"></app-terapeutas-cliente>
+        <app-terapias-cliente *ngIf="recive.tareas"></app-terapias-cliente>
+        <app-sesiones-cliente *ngIf="recive.sesiones"></app-sesiones-cliente>
+        <app-footer-t ></app-footer-t>
+      </div>
+    </div>
+  </div>
+  </div>

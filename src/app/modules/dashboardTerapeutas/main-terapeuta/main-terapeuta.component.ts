@@ -16,7 +16,9 @@ export class MainTerapeutaComponent implements OnInit {
   };
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(!localStorage.getItem('token')) window.location.href = '/'
+  }
 
   receiveMessage($event: any) {
     this.recive = $event;

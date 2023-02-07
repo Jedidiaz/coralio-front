@@ -11,4 +11,9 @@ export class HeaderAComponent implements OnInit {
   abrirMenu() {
     (<HTMLFormElement>document.querySelector('.bar')).style.left = '0';
   }
+
+  salir(){
+    localStorage.removeItem('token')
+    window.location.href = "/login"
+  }
 }

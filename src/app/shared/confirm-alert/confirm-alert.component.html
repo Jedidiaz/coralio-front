@@ -1,0 +1,23 @@
+<div class="dialogContent">
+  <div mat-dialog-content class="dialog">
+    <span>
+      <i
+        class="fa-solid fa-user-check"
+        style="
+          --fa-bounce-start-scale-x: 1;
+          --fa-bounce-start-scale-y: 1;
+          --fa-bounce-jump-scale-x: 1;
+          --fa-bounce-jump-scale-y: 1;
+          --fa-bounce-land-scale-x: 1;
+          --fa-bounce-land-scale-y: 1;
+          --fa-bounce-rebound: 0;
+          color: green;
+        "
+      ></i>
+    </span>
+    <p>{{data.message}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="No()" class="btn NO">Continuar</button>
+  </div>
+</div>

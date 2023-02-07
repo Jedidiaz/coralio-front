@@ -4,68 +4,42 @@
   </section>
   <section class="content_form_auth">
     <div class="header_form">
-      <img src="./assets/img/coralio_logo.png" alt="" class="logo" />
+      <img src="./assets/img/coralio_logo.png" alt="" class="logo" routerLink="/" style="cursor: pointer" />
     </div>
 
-    <div id="options">
-      <div
-        class="body_form"
-        *ngIf="!select"
-        style="
-          padding: 60px 40px;
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        "
-      >
-        <h3>Ingresar</h3>
-        <div style="display: flex; flex-direction: column; gap: 20px">
-          <div class="group_btn" style="margin: 0">
-            <button type="button" (click)="selected()">
-              Ingresar Como cliente
-            </button>
-          </div>
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 10px;
-            "
-          >
-            <div style="border-top: 1px solid #b3b3b3; width: 100%"></div>
-            <p style="margin: 0">O</p>
-            <div style="border-top: 1px solid #b3b3b3; width: 100%"></div>
-          </div>
-          <div class="group_btn" style="margin: 0">
-            <button type="button" (click)="selected2()">
-              Ingresar Como terapeuta
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <form [formGroup]="formLogin" class="body_form" *ngIf="select">
+    <form [formGroup]="formLogin" class="body_form">
       <h2>Ingresa a la plataforma</h2>
 
       <div class="group_form">
         <label for="">Correo electronico</label>
-        <input type="email" placeholder="correo@mail.com" formControlName="email" required />
+        <input
+          type="email"
+          placeholder="correo@mail.com"
+          formControlName="email"
+          required
+        />
       </div>
 
       <div class="group_form">
         <label for="">Contraseña</label>
-        <input type="password" placeholder="*********" formControlName="password" required />
+        <input
+          type="password"
+          placeholder="*********"
+          formControlName="password"
+          required
+        />
       </div>
-      <p [style]="{'color': message.color}">{{message.message}}</p>
-<!-- Buton paciente -->
-      <div class="group_btn" *ngIf="!terapeuta">
-        <button type="button" (click)="loginPaciente()" [disabled]="!formLogin.valid">Ingresar</button>
-      </div>
-<!-- Buton terapeuta -->
-      <div class="group_btn" *ngIf="terapeuta">
-        <button type="button" (click)="loginTerapeuta()" [disabled]="!formLogin.valid">Ingresar</button>
+      <p [style]="{ color: message.color }">{{ message.message }}</p>
+      <!-- Buton terapeuta -->
+      <div class="group_btn">
+        <button
+          type="button"
+          (click)="loginTerapeuta()"
+          (focus)="(true)"
+          [disabled]="!formLogin.valid"
+        >
+          Ingresar
+        </button>
       </div>
 
       <div class="option_auth_title">

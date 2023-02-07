@@ -16,7 +16,7 @@ export class MainAdminComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void {
-
+    if(!localStorage.getItem('token')) window.location.href = '/'
   }
 
   receiveMessage($event: any) {

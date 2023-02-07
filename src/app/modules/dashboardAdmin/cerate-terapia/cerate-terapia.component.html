@@ -1,0 +1,64 @@
+<div class="contentFormUsers">
+  <button class="btn btn-secondary" type="button" (click)="backToTera()">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span *ngIf="data === 'new'">Crear terapeuta</span>
+    <span *ngIf="data === 'edit'">Editar terapeuta</span>
+  </button>
+  <div class="formulario">
+    <form [formGroup]="formUser" (ngSubmit)="createOrNew()">
+      <div class="col">
+        <span>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            formControlName="nombre"
+            placeholder="Nombre*"
+            required
+          />
+        </span>
+        <span>
+          <label for="precio">Precio:</label>
+          <input
+            type="number"
+            id="precio"
+            class="form-control"
+            formControlName="precio"
+            placeholder="Precio*"
+            required
+          />
+        </span>
+      </div>
+      <div class="col">
+        <span>
+          <label for="tipo">Tipo:</label>
+          <input
+            type="email"
+            id="tipo"
+            class="form-control"
+            formControlName="tipo"
+            placeholder="Tipo*"
+            required
+          />
+        </span>
+        <span>
+          <label for="cantidad">Cantidad:</label>
+          <input
+            type="number"
+            id="cantidad"
+            class="form-control"
+            formControlName="cantidad"
+            placeholder="Cantidad*"
+            required
+          />
+        </span>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-success" type="submit" *ngIf="data === 'new'">Crear</button>
+        <button class="btn btn-success" type="submit" *ngIf="data === 'edit'">Guardar</button>
+        <button class="btn btn-danger" type="button" (click)="backToTera()" >Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

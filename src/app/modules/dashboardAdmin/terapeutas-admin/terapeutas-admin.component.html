@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="!create">
   <div class="header">
     <h5>Pacientes</h5>
     <div class="route">
@@ -8,10 +8,10 @@
   </div>
   <div class="tableDiv">
     <div class="seacrh">
-      <button class="btn btn-primary" style="font-size: 20px;">+</button>
-      <div>
+      <button class="btn btn-primary" style="font-size: 20px;" type="button" (click)="newOrEdit('new', '')"><i class="fa-solid fa-plus"></i></button>
+      <div class="searchBar">
         <label for="seaech">search: </label>
-        <input type="form-control" id="seaech">
+        <input type="form-control" id="seaech" [(ngModel)]="filterSearch">
       </div>
     </div>
     <table class="table">
@@ -24,17 +24,23 @@
           <th scope="col">Cedula</th>
           <th scope="col">Especialidad</th>
           <th scope="col">Estado</th>
-          <th scope="col">Ultimo Login</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngIf="pacientes.length < 0; else error">
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+        <tr *ngFor="let te of terapeutas | filter: filterSearch">
+          <td >{{te.nombre}}</td>
+          <td >{{te.apellido}}</td>
+          <td >{{te.email}}</td>
+          <td >{{te.telefono}}</td>
+          <td >{{te.cedula}}</td>
+          <td >{{te.especialidad}}</td>
+          <td *ngIf="te.isActive" style="width: 118px;"><button class="btn btn-success estado" type="button" (click)="updateStatus(te._id)">Activo</button></td>
+          <td *ngIf="!te.isActive" style="width: 118px;"><button class="btn btn-danger estado" type="button" (click)="updateStatus(te._id)">Inactivo</button></td>
+          <td><div style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+            <button class="btn btn-warning" (click)="newOrEdit('edit', te._id)" ><i class="fa-solid fa-pen" style="color: #fff;"></i></button>
+            <button class="btn btn-danger" (click)="DeleteDialog('100ms', '100ms',te._id)"><i class="fa-solid fa-trash"></i></button>
+          </div></td>
         </tr>
       </tbody>
       <tfoot>
@@ -45,3 +51,5 @@
     </table>
   </div>
 </div>
+<app-create-terapeuta *ngIf="create" [idE]="idE" [data]="data" (atras)="reciveBack($event)"></app-create-terapeuta>
+

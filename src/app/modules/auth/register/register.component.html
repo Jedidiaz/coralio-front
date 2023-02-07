@@ -4,39 +4,47 @@
   </section>
   <section class="content_form_auth">
     <div class="header_form">
-      <img src="./assets/img/coralio_logo.png" alt="" class="logo">
+      <img src="./assets/img/coralio_logo.png" alt="" class="logo" routerLink="/" style="cursor: pointer">
     </div>
 
     <div class="body_form">
       <h2>Crear una cuenta</h2>
       <h3>Ingresa tus datos</h3>
-
+    <form [formGroup]="formUser" (ngSubmit)="registrar()">
       <div class="group_form">
           <label for="">Tus nombres</label>
           <div class="group_input">
-              <input type="text" placeholder="nombres">
-              <input type="text" placeholder="apellidos">
+              <input type="text" placeholder="nombres" formControlName="nombre" required>
+              <input type="text" placeholder="apellidos" formControlName="apellido" required>
           </div>
         </div>
 
       <div class="group_form">
         <label for="">Correo electronico</label>
-        <input type="text" placeholder="correo@mail.com">
+        <input type="text" placeholder="correo@mail.com" formControlName="email" required>
       </div>
 
       <div class="group_form">
         <label for="">Contraseña</label>
-        <input type="password" placeholder="*********">
+        <input type="password" placeholder="*********" formControlName="contraseña" required>
+      </div>
+      <div class="group_form">
+        <select class="form-select" aria-label="Default select example" formControlName="rol" >
+          <option selected>Selecciona un rol</option>
+          <option value="terapeuta">Terapeuta</option>
+          <option value="paciente">Paciente</option>
+        </select>
       </div>
 
       <div class="group_check">
-          <input type="checkbox">
+          <input type="checkbox" formControlName="terminos">
           <label for="">Aceptar <a href=""> Politica de Privacidad</a></label>
       </div>
 
       <div class="group_btn">
-        <button type="submit">Crear Cuenta</button>
+        <button type="submit" [disabled]="!formUser.valid">Crear Cuenta</button>
       </div>
+    </form>
 
       <div class="option_auth_title">
         <p>O ingresa con</p>

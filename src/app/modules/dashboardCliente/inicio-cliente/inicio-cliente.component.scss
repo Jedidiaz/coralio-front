@@ -1,0 +1,135 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  .route {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: 20px 0;
+    align-items: center;
+    gap: 5px;
+
+    p,
+    i {
+      margin: 0;
+      color: #b3b3b3;
+      font-size: 14px;
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .inicioImage {
+      width: 100%;
+    }
+
+    .body {
+      padding: 20px;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+  }
+
+  .stats {
+    display: flex;
+    padding: 20px;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    span {
+      width: 50%;
+
+      p {
+        margin: 0;
+        color: #b3b3b3;
+      }
+
+      h4 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  .p-calendar {
+    width: 100%;
+
+    .p-datepicker-month, .p-datepicker-year{
+      border: 0;
+      background-color: transparent;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .p-datepicker-header{
+      margin-bottom: 20px;
+    }
+
+    th{
+      text-align: center;
+    }
+
+    td{
+      padding: 3px;
+    }
+
+    td:hover{
+      background-color: #7366ff;
+      color: #fff;
+      box-shadow: 0 0 47px 10px rgb(115 102 255 / 10%);
+    }
+
+    .p-monthpicker span{
+      margin-top: 10px;
+    }
+  }
+
+  .p-datepicker-prev, .p-datepicker-next{
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #7366ff;
+  }
+
+
+}
+
+.calendarinicio{
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .section {
+    flex-direction: row !important;
+    .inicioImage,
+    .calendarinicio {
+      width: 50% !important;
+    }
+  }
+
+  .body{
+    height: 271px;
+  }
+
+  .stats {
+    padding: 40px !important;
+    max-width: 1052px;
+  }
+}

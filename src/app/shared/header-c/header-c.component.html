@@ -1,0 +1,39 @@
+<nav>
+  <div class="header">
+    <div class="menu">
+      <button type="button" class="btn btn-secondary" (click)="abrirMenu()"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="logoImg">
+      <img src="../../../assets/img/coralio_logo.png">
+    </div>
+    <div class="contentButtons">
+      <li class="respon"><i class="fa-sharp fa-solid fa-moon"></i></li>
+      <li><i class="fa-sharp fa-solid fa-comment"></i></li>
+      <li class="respon"><i class="fa-sharp fa-solid fa-expand"></i></li>
+      <div class="profile">
+        <div class="imageProfile">
+          <img src="../../../assets/img/profile.jpg" width="100%">
+        </div>
+        <div class="descriptionProfile">
+          <span>Nombre</span>
+          <p class="dropDownProfile drop">Paciente <i class="fa-sharp fa-solid fa-chevron-down"></i></p>
+          <div class="dropDown">
+            <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+            <p class="Salir" (click)="salir()">Salir</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttonsSelect">
+    <ul>
+      <li>
+        <a (click)="goInicio()" ><i class="fa-solid fa-house"></i>Dashboard</a>
+        <a (click)="goPacientes()"><i class="fa-solid fa-paper-plane"></i>Terapeutas</a>
+        <a (click)="goTareas()"><i class="fa-regular fa-file-lines"></i>Terapias</a>
+        <a (click)="goSesiones()"><i class="fa-solid fa-file-pen"></i>Sesiones agendadas</a>
+        <a (click)="goDocumentos()"><i class="fa-solid fa-user"></i>Perfil</a>
+      </li>
+    </ul>
+  </div>
+</nav>

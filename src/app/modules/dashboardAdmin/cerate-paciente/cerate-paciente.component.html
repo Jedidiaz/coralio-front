@@ -1,0 +1,95 @@
+<div class="contentFormUsers">
+  <button class="btn btn-secondary" type="button" (click)="backToTera()">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span *ngIf="data === 'new'">Crear terapeuta</span>
+    <span *ngIf="data === 'edit'">Editar terapeuta</span>
+  </button>
+  <div class="formulario">
+    <form [formGroup]="formUser" (ngSubmit)="createOrNew()">
+      <div class="col">
+        <span>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            formControlName="nombre"
+            placeholder="Nombre*"
+            required
+          />
+        </span>
+        <span>
+          <label for="Apellido">Apellido:</label>
+          <input
+            type="text"
+            id="Apellido"
+            class="form-control"
+            formControlName="apellido"
+            placeholder="Apellido*"
+            required
+          />
+        </span>
+      </div>
+      <div class="col">
+        <span>
+          <label for="Email">Email:</label>
+          <input
+            type="email"
+            id="Email"
+            class="form-control email"
+            formControlName="email"
+            placeholder="Email*"
+            required
+          />
+        </span>
+        <span>
+          <label for="Telefono">Telefono:</label>
+          <input
+            type="text"
+            id="Telefono"
+            class="form-control"
+            formControlName="telefono"
+            placeholder="Telefono*"
+            required
+          />
+        </span>
+        <span *ngIf="data != 'edit'">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Password*"
+            required
+          />
+        </span>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-success" type="submit" *ngIf="data === 'new'">Crear</button>
+        <button class="btn btn-success" type="submit" *ngIf="data === 'edit'">Guardar</button>
+        <button class="btn btn-danger" type="button" (click)="backToTera()" >Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="contentFormUsers" *ngIf="data === 'edit'">
+  <form [formGroup]="formUser" (ngSubmit)="updatePassword()">
+    <div class="col">
+      <span>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Password*"
+          formControlName="password"
+          required
+        />
+      </span>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-success" type="submit" *ngIf="data === 'edit'">Guardar</button>
+    </div>
+  </form>
+</div>
