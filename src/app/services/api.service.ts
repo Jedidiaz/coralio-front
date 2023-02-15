@@ -1,4 +1,4 @@
-import { DataInfoAdminModel, ResponseGetAdminModel, ResponseGetIDAdminModel, ResposeGetAdminTerapiasModel, ResposeGetAdminTerapiasIDModel } from './../Models/AdminModels.interface';
+import { DataInfoAdminModel, ResponseGetAdminModel, ResponseGetIDAdminModel, ResposeGetAdminTerapiasModel, ResposeGetAdminTerapiasIDModel, ResponseGetAdminBlogModel, ResponseGetAdminBlogOneModel } from './../Models/AdminModels.interface';
 import { ResponseAuth } from './../Models/auth.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -14,6 +14,8 @@ export class ApiService {
   // url = 'https://api-coralio.cmc-software.com/api'
 
   // url = 'http://25.78.142.190:9000/api'
+
+  // url = 'http://25.65.134.189:9000/api'
 
   url = 'https://contenedor-production.up.railway.app/api'
 
@@ -99,11 +101,41 @@ export class ApiService {
     })
   }
 
-  updateStatus(id: any):Observable<any>{
-    console.log(this.headers)
-    return this.http.put<any>(`${this.url}/admin/status/${id}`, {
-      headers: this.headers,
+  // updateStatus():Observable<any>{
+  //   return this.http.put<any>(`${this.url}/admin/status/${id}`, {
+  //     headers: this.headers,
+  //   })
+  // }
+
+  updateStatus(id: any):Observable<ResponseAuth>{
+    const body = {}
+    return this.http.put<ResponseAuth>(`${this.url}/admin/status/${id}`, body,{
+      headers: this.headers
     })
+  }
+
+  //blogs
+  getBlogs():Observable<ResponseGetAdminBlogModel>{
+    return this.http.get<ResponseGetAdminBlogModel>(`${this.url}/admin/seepub`, {
+      headers: this.headers
+    })
+  }
+
+  getBlogsByID(id: any):Observable<ResponseGetAdminBlogOneModel>{
+    return this.http.get<ResponseGetAdminBlogOneModel>(`${this.url}/admin/seepub/${id}`, {
+      headers: this.headers
+    })
+  }
+
+  deleteAdminblogs(id: any):Observable<any>{
+    return this.http.delete<any>(`${this.url}/admin/removepub/${id}`,{
+      headers: this.headers
+    })
+  }
+
+  //usuarios
+  getUserLogged():Observable<any>{
+    return this.http.get<any>(`${this.url}/user/see`, {headers: this.headers})
   }
 }
 

@@ -1,0 +1,105 @@
+<div class="contentFormUsers">
+  <button class="btn btn-secondary" type="button" (click)="backToTera()">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span *ngIf="data === 'new'">Crear terapeuta</span>
+    <span *ngIf="data === 'edit'">Editar terapeuta</span>
+  </button>
+  <div class="formulario">
+    <form [formGroup]="formUser" (ngSubmit)="createOrNew()">
+      <div class="col">
+        <span>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            formControlName="nombre"
+            placeholder="Nombre*"
+            required
+          />
+        </span>
+        <span>
+          <label for="Apellido">Apellido:</label>
+          <input
+            type="text"
+            id="Apellido"
+            class="form-control"
+            formControlName="apellido"
+            placeholder="Apellido*"
+            required
+          />
+        </span>
+      </div>
+      <div class="col">
+        <span>
+          <label for="Email">Email:</label>
+          <input
+            type="email"
+            id="Email"
+            class="form-control email"
+            formControlName="email"
+            placeholder="Email*"
+            required
+          />
+        </span>
+        <span>
+          <label for="Telefono">Telefono:</label>
+          <input
+            type="text"
+            id="Telefono"
+            class="form-control"
+            formControlName="telefono"
+            placeholder="Telefono*"
+            required
+          />
+        </span>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-success" type="submit" >Guardar</button>
+        <button class="btn btn-danger" type="button">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="contentFormUsers">
+  <form [formGroup]="formUser" (ngSubmit)="updatePassword()">
+    <div class="col">
+      <span>
+        <label for="password">Contraseña:</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Contraseña*"
+          formControlName="password"
+          required
+        />
+      </span>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-success" type="submit">Guardar</button>
+    </div>
+  </form>
+</div>
+<div class="contentFormUsers">
+  <form  >
+    <div class="col">
+      <span style="display: flex; flex-direction: column">
+        <label for="video"
+          >Imagen de perfil:</label
+        >
+        <input
+          type="file"
+          id="video"
+          class="form-control"
+          accept="image/*"
+
+          required
+        />
+      </span>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-success" type="submit" >Guardar</button>
+    </div>
+  </form>
+</div>

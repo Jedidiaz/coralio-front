@@ -13,6 +13,7 @@ export class MainTerapeutaComponent implements OnInit {
     documentos: false,
     tareas: false,
     sesiones: false,
+    perfil: false
   };
   constructor() {}
 

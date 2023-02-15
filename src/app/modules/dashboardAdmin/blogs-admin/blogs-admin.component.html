@@ -1,0 +1,52 @@
+<div class="content" *ngIf="!create">
+  <div class="header">
+    <h5>Pacientes</h5>
+    <div class="route">
+      <i class="fa-solid fa-house"></i>
+      <p>/ Admin / Terapias</p>
+    </div>
+  </div>
+  <div class="tableDiv">
+    <div class="seacrh">
+      <button class="btn btn-primary" style="font-size: 20px;" type="button" (click)="newOrEdit('new', '')"><i class="fa-solid fa-plus"></i></button>
+      <div class="searchBar">
+        <label for="seaech">search: </label>
+        <input type="form-control" id="seaech" [(ngModel)]="filterSearch">
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Titulo</th>
+          <th scope="col">Body</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Aciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let te of terapeutas ">
+          <td >{{te.titulo}}</td>
+          <td >{{te.cuerpo}}</td>
+          <td >{{te.autor}}</td>
+          <td >
+            <img [src]="te.img.filePath" style="width: 80px; height: 80px;">
+          </td>
+          <td>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+              <button class="btn btn-warning" (click)="newOrEdit('edit', te._id)" ><i class="fa-solid fa-pen" style="color: #fff;"></i></button>
+              <button class="btn btn-danger" (click)="DeleteDialog('100ms', '100ms',te._id)"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <ng-template #error>
+          <p style="color: #000; width: 100%; text-align: center;">No hay resultados</p>
+        </ng-template>
+      </tfoot>
+    </table>
+  </div>
+</div>
+<app-create-blog *ngIf="create" [idE]="idE" [data]="data" (atras)="reciveBack($event)"></app-create-blog>
+

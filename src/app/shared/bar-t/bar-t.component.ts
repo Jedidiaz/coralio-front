@@ -13,6 +13,7 @@ export class BarTComponent implements OnInit {
   documentos: boolean = false;
   tareas: boolean = false;
   sesiones: boolean = false;
+  perfil: boolean = false
 
   constructor() {}
 
@@ -24,12 +25,14 @@ export class BarTComponent implements OnInit {
     this.documentos = false;
     this.tareas = false;
     this.sesiones = false;
+    this.perfil = false
     this.messageEvent.emit({
       inicio: true,
       pacientes: false,
       documentos: false,
       tareas: false,
       sesiones: false,
+      perfil: false
     });
   }
 
@@ -39,12 +42,15 @@ export class BarTComponent implements OnInit {
     this.documentos = false;
     this.tareas = false;
     this.sesiones = false;
+    this.perfil = false
     this.messageEvent.emit({
       inicio: false,
       pacientes: true,
       documentos: false,
       tareas: false,
       sesiones: false,
+      perfil: false
+
     });
   }
 
@@ -54,12 +60,15 @@ export class BarTComponent implements OnInit {
     this.documentos = true;
     this.tareas = false;
     this.sesiones = false;
+    this.perfil = false
     this.messageEvent.emit({
       inicio: false,
       pacientes: false,
       documentos: true,
       tareas: false,
       sesiones: false,
+      perfil: false
+
     });
   }
 
@@ -69,12 +78,15 @@ export class BarTComponent implements OnInit {
     this.documentos = false;
     this.tareas = true;
     this.sesiones = false;
+    this.perfil = false
     this.messageEvent.emit({
       inicio: false,
       pacientes: false,
       documentos: false,
       tareas: true,
       sesiones: false,
+      perfil: false
+
     });
   }
 
@@ -84,12 +96,31 @@ export class BarTComponent implements OnInit {
     this.documentos = false;
     this.tareas = false;
     this.sesiones = true;
+    this.perfil = false
     this.messageEvent.emit({
       inicio: false,
       pacientes: false,
       documentos: false,
       tareas: false,
       sesiones: true,
+      perfil: false
+    });
+  }
+
+  goPerfil(){
+    this.inicio = false;
+    this.pacientes = false;
+    this.documentos = false;
+    this.tareas = false;
+    this.sesiones = false;
+    this.perfil = true
+    this.messageEvent.emit({
+      inicio: false,
+      pacientes: false,
+      documentos: false,
+      tareas: false,
+      sesiones: false,
+      perfil: true
     });
   }
 

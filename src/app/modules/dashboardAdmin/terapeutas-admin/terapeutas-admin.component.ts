@@ -75,7 +75,7 @@ export class TerapeutasAdminComponent implements OnInit {
   updateStatus(id: any){
     this.apiService.updateStatus(id).subscribe({
       next: (res)=> {
-       this.getTerapeutas()
+        if (res.response === 'Success')this.getTerapeutas()
       }, error: (err)=> {
         console.log(err)
       }

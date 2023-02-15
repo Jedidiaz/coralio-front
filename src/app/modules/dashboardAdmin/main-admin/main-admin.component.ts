@@ -11,6 +11,7 @@ export class MainAdminComponent implements OnInit {
     terapeutas: true,
     pacientes: false,
     terapias: false,
+    blogs: false
   };
 
   constructor(){}

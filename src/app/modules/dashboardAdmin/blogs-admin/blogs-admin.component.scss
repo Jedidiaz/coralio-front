@@ -1,0 +1,94 @@
+.content{
+  width: 100%;
+}
+
+.tableDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #ffff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.tableDiv input{
+  border-radius: 10px;
+  border: 1px solid #b3b3b3;
+  outline: none;
+  padding: 5px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seacrh{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .btn{
+    padding: 6px 18px;
+  }
+}
+
+.route {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  padding: 20px 0;
+
+  p,
+  i {
+    margin: 0;
+    color: #b3b3b3;
+    font-size: 14px;
+  }
+}
+
+.estado{
+  width: 100%;
+}
+
+.btn-primary{
+  background-color: #7366ff;
+  border: 0;
+}
+
+.searchBar{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+tr{
+  text-align: center;
+}
+
+td{
+}
+
+
+.overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(74, 74, 74, .8);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .tableDiv {
+    padding: 30px;
+  }
+}

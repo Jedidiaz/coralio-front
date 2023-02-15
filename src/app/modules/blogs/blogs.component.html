@@ -1,0 +1,29 @@
+<app-header-home></app-header-home>
+<div class="container contentBlogs">
+  <div class="cardMain">
+    <img [src]="blog[0].img.filePath" class="imgMain" />
+    <div class="descMain">
+      <div class="mitad"></div>
+      <h2>{{ blog[0].titulo }}</h2>
+      <p><span>Publicado por:</span> {{ blog[0].autor }}</p>
+      <hr />
+      <p>{{ blog[0].cuerpo }}</p>
+    </div>
+  </div>
+  <div class="contentcards">
+    <div class="cardBlogs" *ngFor="let blog of blog">
+      <div class="body img">
+        <img
+          [src]="blog.img.filePath"
+          style="width: 100%; object-fit: cover; border-radius: 10px"
+        />
+      </div>
+      <div class="body desc">
+        <h3>{{ blog.titulo }}</h3>
+        <p><span>Publicado por: </span> {{ blog.autor }}</p>
+        <hr />
+        <p>{{ blog.cuerpo }}</p>
+      </div>
+    </div>
+  </div>
+</div>

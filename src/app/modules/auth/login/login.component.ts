@@ -42,8 +42,10 @@ export class LoginComponent implements OnInit{
             }
             if(res.rol === 'admin'){
               window.location.href = "/admin"
-            }else {
+            }else if(res.rol === 'terapeuta') {
               window.location.href = "/terapeuta"
+            }else if(res.rol === 'paciente') {
+              window.location.href = "/cliente"
             }
           }else {
             this.message = {

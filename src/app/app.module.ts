@@ -54,6 +54,11 @@ import { CerateTerapiaComponent } from './modules/dashboardAdmin/cerate-terapia/
 import { TerapeutasClienteComponent } from './modules/dashboardCliente/terapeutas-cliente/terapeutas-cliente.component';
 import { TerapiasClienteComponent } from './modules/dashboardCliente/terapias-cliente/terapias-cliente.component';
 import { SesionesClienteComponent } from './modules/dashboardCliente/sesiones-cliente/sesiones-cliente.component';
+import { BlogsAdminComponent } from './modules/dashboardAdmin/blogs-admin/blogs-admin.component';
+import { CreateBlogComponent } from './modules/dashboardAdmin/create-blog/create-blog.component';
+import { BlogsComponent } from './modules/blogs/blogs.component';
+import { PerfilClienteComponent } from './modules/dashboardCliente/perfil-cliente/perfil-cliente.component';
+import { PerfilTerapeutaComponent } from './modules/dashboardTerapeutas/perfil-terapeuta/perfil-terapeuta.component';
 
 
 @NgModule({
@@ -94,6 +99,11 @@ import { SesionesClienteComponent } from './modules/dashboardCliente/sesiones-cl
     TerapeutasClienteComponent,
     TerapiasClienteComponent,
     SesionesClienteComponent,
+    BlogsAdminComponent,
+    CreateBlogComponent,
+    BlogsComponent,
+    PerfilClienteComponent,
+    PerfilTerapeutaComponent,
   ],
   imports: [
     BrowserModule,

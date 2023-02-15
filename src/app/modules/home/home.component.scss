@@ -19,7 +19,7 @@
 }
 
 .section1Home h1 {
-  font-size: calc(2.375rem + 1.5vw);
+  font-size: calc(2.375rem + 1.5vw) !important;
   font-weight: 600;
   background-image: linear-gradient(
       rgba(158, 107, 248, 0.5),

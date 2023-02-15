@@ -1,18 +1,18 @@
-import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from './../../../shared/confirm-dialog/confirm-dialog.component';
 import { ConfirmAlertComponent } from './../../../shared/confirm-alert/confirm-alert.component';
-import { MatDialog } from '@angular/material/dialog';
-import { DataInfoAdminModel } from './../../../Models/AdminModels.interface';
+import { dataInfoTerapiaAdminModel, datainfoAdminBlogModel } from './../../../Models/AdminModels.interface';
 import { ApiService } from './../../../services/api.service';
-import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pacientes-admin',
-  templateUrl: './pacientes-admin.component.html',
-  styleUrls: ['./pacientes-admin.component.scss']
+  selector: 'app-blogs-admin',
+  templateUrl: './blogs-admin.component.html',
+  styleUrls: ['./blogs-admin.component.scss']
 })
-export class PacientesAdminComponent implements OnInit{
+export class BlogsAdminComponent {
   pacientes: any[] = [1, 2, 3];
-  terapeutas!: DataInfoAdminModel[];
+  terapeutas!: datainfoAdminBlogModel[];
   create: boolean = false;
   data: string = '';
   idE: any
@@ -26,8 +26,9 @@ export class PacientesAdminComponent implements OnInit{
 
   //actions CRUD
   getTerapeutas() {
-    this.apiService.getAdmin('seep').subscribe({
+    this.apiService.getBlogs().subscribe({
       next: (res) => {
+        console.log(res)
         if (res.response === 'Success') {
           this.terapeutas = res.datainfo;
         }
@@ -61,7 +62,7 @@ export class PacientesAdminComponent implements OnInit{
   }
 
   DeleteTerapeutas(id: any) {
-    this.apiService.deleteAdmin(id).subscribe({
+    this.apiService.deleteAdminblogs(id).subscribe({
       next: (res) => {
         this.getTerapeutas();
       },
@@ -75,7 +76,7 @@ export class PacientesAdminComponent implements OnInit{
   updateStatus(id: any){
     this.apiService.updateStatus(id).subscribe({
       next: (res)=> {
-        if (res.response === 'Success') this.getTerapeutas()
+       this.getTerapeutas()
       }, error: (err)=> {
         console.log(err)
       }

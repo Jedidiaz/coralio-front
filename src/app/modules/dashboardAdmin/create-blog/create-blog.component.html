@@ -1,0 +1,94 @@
+<div class="contentFormUsers">
+  <button class="btn btn-secondary" type="button" (click)="backToTera()">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span *ngIf="data === 'new'">Crear terapeuta</span>
+    <span *ngIf="data === 'edit'">Editar terapeuta</span>
+  </button>
+  <div class="formulario">
+    <form [formGroup]="formUser" (ngSubmit)="createOrNew()">
+      <div class="col">
+        <span>
+          <label for="titulo">Titulo:</label>
+          <input
+            type="text"
+            id="titulo"
+            class="form-control"
+            formControlName="titulo"
+            placeholder="titulo*"
+            required
+          />
+        </span>
+        <span>
+          <label for="cuerpo">Body:</label>
+          <textarea
+            name="cuerpo"
+            id="cuerpo"
+            cols="2"
+            formControlName="cuerpo"
+            placeholder="Descripcion"
+            class="form-control"
+            required
+          ></textarea>
+        </span>
+      </div>
+      <div class="col">
+        <span  *ngIf="data == 'new'">
+          <label for="Autor">Autor:</label>
+          <input
+            type="text"
+            id="Autor"
+            class="form-control"
+            formControlName="autor"
+            placeholder="Autor*"
+            required
+          />
+        </span>
+        <span *ngIf="data == 'new'">
+          <label for="img">Imagen:</label>
+          <input
+            type="file"
+            id="img"
+            class="form-control"
+            formControlName="img"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+            required
+          />
+        </span>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-success" type="submit" *ngIf="data === 'new'">
+          Crear
+        </button>
+        <button class="btn btn-success" type="submit" *ngIf="data === 'edit'">
+          Guardar
+        </button>
+        <button class="btn btn-danger" type="button" (click)="backToTera()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="contentFormUsers" *ngIf="data === 'edit'">
+  <form (ngSubmit)="updateVideo()" >
+    <div class="col">
+      <span style="display: flex; flex-direction: column">
+        <label for="video"
+          >Actualizar imagen:</label
+        >
+        <input
+          type="file"
+          id="video"
+          class="form-control"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          required
+        />
+      </span>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-success" type="submit" *ngIf="data === 'edit'">Guardar</button>
+    </div>
+  </form>
+</div>

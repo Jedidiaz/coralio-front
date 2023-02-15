@@ -1,32 +1,32 @@
 export interface ResponseGetAdminModel {
   response: string;
-  datainfo: DataInfoAdminModel[]
+  datainfo: DataInfoAdminModel[];
 }
 
 export interface ResposeGetAdminTerapiasModel {
-  response: string
-  datainfo: dataInfoTerapiaAdminModel[]
+  response: string;
+  datainfo: dataInfoTerapiaAdminModel[];
 }
 
 export interface ResposeGetAdminTerapiasIDModel {
-  response: string
-  datainfo: dataInfoTerapiaAdminModel
+  response: string;
+  datainfo: dataInfoTerapiaAdminModel;
 }
 
-export interface dataInfoTerapiaAdminModel{
-  _id: string,
-  nombre: string,
-  tipo: string,
-  cantidad:  number,
-  precio:  number,
-  createdAt: string,
-  updatedAt: string,
-  __v: number
+export interface dataInfoTerapiaAdminModel {
+  _id: string;
+  nombre: string;
+  tipo: string;
+  cantidad: number;
+  precio: number;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
 }
 
 export interface ResponseGetIDAdminModel {
   response: string;
-  datainfo: DataInfoAdminModel
+  datainfo: DataInfoAdminModel;
 }
 
 export interface DataInfoAdminModel {
@@ -45,15 +45,36 @@ export interface DataInfoAdminModel {
   updatedAt: string;
   video: FileAdminModel;
   _id: string;
-  especialidad: string
+  especialidad: string;
 }
 
 export interface PreferenciasUsuarioModel {
-  name: string
+  name: string;
 }
 
 export interface FileAdminModel {
-  fileName: string
-  filePath: string
-  fileType: string
+  fileName: string;
+  filePath: string;
+  fileType: string;
+}
+
+export interface ResponseGetAdminBlogModel {
+  response: string;
+  datainfo: datainfoAdminBlogModel[];
+}
+
+export interface ResponseGetAdminBlogOneModel {
+  response: string;
+  datainfo: datainfoAdminBlogModel;
+}
+
+export interface datainfoAdminBlogModel {
+  img: FileAdminModel;
+  _id: string;
+  titulo: string;
+  cuerpo: string;
+  autor: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
 }

@@ -1,3 +1,4 @@
+import { BlogsComponent } from './modules/blogs/blogs.component';
 import { MainAdminComponent } from './modules/dashboardAdmin/main-admin/main-admin.component';
 import { BarTComponent } from './shared/bar-t/bar-t.component';
 import { MainClienteComponent } from './modules/dashboardCliente/main-cliente/main-cliente.component';
@@ -15,6 +16,7 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 const routes: Routes = [
   {path: '404', component: ErrorPageComponent },
   {path: '', component: HomeComponent },
+  {path: 'blog', component: BlogsComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'cliente', component: MainClienteComponent },
