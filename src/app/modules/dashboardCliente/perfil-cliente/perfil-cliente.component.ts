@@ -30,6 +30,8 @@ export class PerfilClienteComponent {
       email: ['', Validators.required],
       telefono: ['', Validators.required],
       password: ['', Validators.required],
+      password1: ['', Validators.required],
+      password2: ['', Validators.required],
     });
   }
 
@@ -81,6 +83,8 @@ export class PerfilClienteComponent {
             email: res.user.email,
             telefono: res.user.telefono,
             password: '',
+            password1: '',
+            password2: '',
           });
         }
       },
@@ -114,9 +118,44 @@ export class PerfilClienteComponent {
 
   //actualizar passwortd
   updatePassword() {
+    const body = new FormData();
+    body.append('passwordOld', this.formUser.value.password)
+    body.append('passwordNew1', this.formUser.value.password1)
+    body.append('passwordNew2', this.formUser.value.password2)
+    this.apiService.updateUserInfo(body ,'paciente/editpass').subscribe({
+      next: (res) => {
+        if (res.response === 'Success') {
+          this.messageError = res.message
+          this.openDialogConfirm()
+        }
+        else {
+          this.messageError = res.message
+          this.openDialogError()
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  // selectImage
+  onImageSelected($event: any): any {
+    if ($event.target.files.length > 0) {
+      const [file] = $event.target.files;
+      this.video = {
+        fileRaw: file,
+        fileName: file.name,
+      };
+      console.log(this.video);
+    }
+  }
+
+  //actualizar file
+  updateFile() {
     const form = new FormData();
-    form.append('password', this.formUser.value.password);
-    this.apiService.updateAdminPassword(form, this.idE).subscribe({
+    form.append('imgpro', this.video.fileRaw, this.video.fileName);
+    this.apiService.updateUserInfo(form, 'paciente/editimg').subscribe({
       next: (res) => {
         if (res.response === 'Success') {
           this.messageError = res.message

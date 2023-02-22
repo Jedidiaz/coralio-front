@@ -1,0 +1,72 @@
+<div class="dialogContent">
+  <div mat-dialog-content class="dialog">
+    <h2>Crear Terapia</h2>
+    <hr />
+    <form [formGroup]="formCreate">
+      <div class="col">
+        <span>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            formControlName="nombre"
+            id="nombre"
+            class="form-control"
+            placeholder="Nombre*"
+            required
+          />
+        </span>
+        <span>
+          <label for="tipo">Tipo:</label>
+          <input
+            type="text"
+            formControlName="tipo"
+            id="tipo"
+            class="form-control"
+            placeholder="Tipo*"
+            required
+          />
+        </span>
+      </div>
+      <div class="col">
+        <span>
+          <label for="cantidad">Cantidad:</label>
+          <input
+            type="number"
+            formControlName="cantidad"
+            id="cantidad"
+            class="form-control"
+            placeholder="Cantidad*"
+            required
+          />
+        </span>
+        <span>
+          <label for="precio">Precio:</label>
+          <input
+            type="number"
+            formControlName="precio"
+            id="precio"
+            class="form-control"
+            placeholder="Precio*"
+            required
+          />
+        </span>
+      </div>
+      <span>
+        <label for="descripcion">Descipcion</label>
+        <textarea
+          name="descripcion"
+          id="descripcion"
+          rows="3"
+          formControlName="descripcion"
+          placeholder="Descripcion corta*"
+          class="form-control"
+          required
+        ></textarea>
+      </span>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true" class="btn Si">Crear</button>
+    <button mat-button (click)="No()" class="btn NO">Cancelar</button>
+  </div>
+</div>

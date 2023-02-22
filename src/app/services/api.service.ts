@@ -15,9 +15,9 @@ export class ApiService {
 
   // url = 'http://25.78.142.190:9000/api'
 
-  // url = 'http://25.65.134.189:9000/api'
+  url = 'http://25.65.134.189:9000/api'
 
-  url = 'https://contenedor-production.up.railway.app/api'
+  // url = 'https://contenedor-production.up.railway.app/api'
 
   headers = new HttpHeaders()
   .append('Authorization', 'Bearer ' + localStorage.getItem('token'))
@@ -137,5 +137,12 @@ export class ApiService {
   getUserLogged():Observable<any>{
     return this.http.get<any>(`${this.url}/user/see`, {headers: this.headers})
   }
+
+  updateUserInfo(body: FormData, urlLink: any):Observable<ResponseAuth>{
+    return this.http.put<ResponseAuth>(`${this.url}/${urlLink}`, body,{
+      headers: this.headers
+    })
+  }
+
 }
 

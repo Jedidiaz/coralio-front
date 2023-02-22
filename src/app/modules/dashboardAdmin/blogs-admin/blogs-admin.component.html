@@ -47,6 +47,21 @@
       </tfoot>
     </table>
   </div>
+  <div class="content-cards">
+    <div class="cardEmpty" (click)="newOrEdit('new', '')">
+      <span class="plus"><i class="fa-solid fa-plus"></i></span>
+    </div>
+    <div class="card">
+      <div class="imgCard" style="width: 300px;">
+        <img [src]="contenedor.image" alt="" style="width: 100%;">
+      </div>
+      <div class="desCard" style="padding: 10px; object-fit: cover;">
+        <h2 style="font-weight: 600;">{{contenedor.titulo}}</h2>
+        <p>{{contenedor.descripcionC}}</p>
+        <p style="color: #2b2b2bb2; font-weight: 500; ">{{contenedor.autor}}</p>
+      </div>
+    </div>
+  </div>
 </div>
 <app-create-blog *ngIf="create" [idE]="idE" [data]="data" (atras)="reciveBack($event)"></app-create-blog>
 

@@ -59,6 +59,7 @@ import { CreateBlogComponent } from './modules/dashboardAdmin/create-blog/create
 import { BlogsComponent } from './modules/blogs/blogs.component';
 import { PerfilClienteComponent } from './modules/dashboardCliente/perfil-cliente/perfil-cliente.component';
 import { PerfilTerapeutaComponent } from './modules/dashboardTerapeutas/perfil-terapeuta/perfil-terapeuta.component';
+import { PupopTerapiaComponent } from './shared/pupop-terapia/pupop-terapia.component';
 
 
 @NgModule({
@@ -104,6 +105,7 @@ import { PerfilTerapeutaComponent } from './modules/dashboardTerapeutas/perfil-t
     BlogsComponent,
     PerfilClienteComponent,
     PerfilTerapeutaComponent,
+    PupopTerapiaComponent,
   ],
   imports: [
     BrowserModule,

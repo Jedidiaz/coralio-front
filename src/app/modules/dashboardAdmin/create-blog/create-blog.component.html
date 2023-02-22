@@ -1,8 +1,7 @@
 <div class="contentFormUsers">
   <button class="btn btn-secondary" type="button" (click)="backToTera()">
     <i class="fa-solid fa-arrow-left"></i>
-    <span *ngIf="data === 'new'">Crear terapeuta</span>
-    <span *ngIf="data === 'edit'">Editar terapeuta</span>
+    <span *ngIf="data === 'new'">Crear Blog</span>
   </button>
   <div class="formulario">
     <form [formGroup]="formUser" (ngSubmit)="createOrNew()">

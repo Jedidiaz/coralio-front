@@ -1,9 +1,4 @@
 <div class="contentFormUsers">
-  <button class="btn btn-secondary" type="button" (click)="backToTera()">
-    <i class="fa-solid fa-arrow-left"></i>
-    <span *ngIf="data === 'new'">Crear terapeuta</span>
-    <span *ngIf="data === 'edit'">Editar terapeuta</span>
-  </button>
   <div class="formulario">
     <form [formGroup]="formUser" (ngSubmit)="createOrNew()">
       <div class="col">
@@ -50,17 +45,6 @@
             class="form-control"
             formControlName="telefono"
             placeholder="Telefono*"
-            required
-          />
-        </span>
-        <span *ngIf="data != 'edit'">
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            formControlName="password"
-            placeholder="Password*"
             required
           />
         </span>
@@ -113,13 +97,35 @@
   <form [formGroup]="formUser" (ngSubmit)="updatePassword()">
     <div class="col">
       <span>
-        <label for="password">Contraseña:</label>
+        <label for="password">Contraseña Actual:</label>
         <input
           type="password"
           id="password"
           class="form-control"
           placeholder="Contraseña*"
           formControlName="password"
+          required
+        />
+      </span>
+      <span>
+        <label for="password1">Nueva Contraseña:</label>
+        <input
+          type="password"
+          id="password1"
+          class="form-control"
+          placeholder="Nueva*"
+          formControlName="password1"
+          required
+        />
+      </span>
+      <span>
+        <label for="password2">Repetir Contraseña:</label>
+        <input
+          type="password"
+          id="password2"
+          class="form-control"
+          placeholder="Repetir Nueva*"
+          formControlName="password2"
           required
         />
       </span>
@@ -130,7 +136,7 @@
   </form>
 </div>
 <div class="contentFormUsers">
-  <form  >
+  <form  (ngSubmit)="updateFile(false)" >
     <div class="col">
       <span style="display: flex; flex-direction: column">
         <label for="video"
@@ -141,7 +147,7 @@
           id="video"
           class="form-control"
           accept="image/*"
-
+          (change)="onImageSelected($event)"
           required
         />
       </span>
@@ -152,7 +158,7 @@
   </form>
 </div>
 <div class="contentFormUsers">
-  <form  >
+  <form (ngSubmit)="updateFile(true)" >
     <div class="col">
       <span style="display: flex; flex-direction: column">
         <label for="video"
@@ -163,7 +169,7 @@
           id="video"
           class="form-control"
           accept="image/*"
-
+          (change)="onVideoSelected($event)"
           required
         />
       </span>

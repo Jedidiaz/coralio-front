@@ -17,6 +17,7 @@ export class PerfilTerapeutaComponent implements OnInit {
 
   formUser: FormGroup;
   video: any;
+  img: any
   messageError: any
 
   constructor(
@@ -29,7 +30,12 @@ export class PerfilTerapeutaComponent implements OnInit {
       apellido: ['', Validators.required],
       email: ['', Validators.required],
       telefono: ['', Validators.required],
+      especialidad: ['', Validators.required],
+      descripcion: ['', Validators.required],
+      cedula: ['', Validators.required],
       password: ['', Validators.required],
+      password1: ['', Validators.required],
+      password2: ['', Validators.required],
     });
   }
 
@@ -51,17 +57,18 @@ export class PerfilTerapeutaComponent implements OnInit {
     form.append('apellido', this.formUser.value.apellido);
     form.append('email', this.formUser.value.email);
     form.append('telefono', this.formUser.value.telefono);
-    this.apiService.updateAdmin(form, 'editp', this.idE).subscribe({
+    form.append('especialidad', this.formUser.value.especialidad);
+    form.append('descripcion', this.formUser.value.descripcion);
+    form.append('cedula', this.formUser.value.cedula);
+    this.apiService.updateUserInfo(form, 'terapeuta/editi',).subscribe({
       next: (res) => {
         if (res.response === 'Success') {
           this.messageError = res.message
           this.openDialogConfirm()
-          this.formUser.reset()
         }
         else {
           this.messageError = res.message
           this.openDialogError()
-          console.log(res)
         }
       },
       error: (err) => {
@@ -74,15 +81,19 @@ export class PerfilTerapeutaComponent implements OnInit {
   getTerapeutasEdit() {
     this.apiService.getUserLogged().subscribe({
       next: (res) => {
-        console.log(res);
+        console.log(res)
         if (res.response === 'Success') {
-          console.log(res.datainfo)
           this.formUser.setValue({
-            nombre: res.datainfo.nombre,
-            apellido: res.datainfo.apellido,
-            email: res.datainfo.email,
-            telefono: res.datainfo.telefono,
+            nombre: res.user.nombre,
+            apellido: res.user.apellido,
+            email: res.user.email,
+            telefono: res.user.telefono,
+            cedula: res.user.cedula,
+            especialidad: res.user.especialidad,
+            descripcion: res.user.descripcion,
             password: '',
+            password1: '',
+            password2: '',
           });
         }
       },
@@ -97,7 +108,7 @@ export class PerfilTerapeutaComponent implements OnInit {
     const dialog = this.dialog.open(ConfirmAlertComponent, {
       data: {message: this.messageError}
     });
-    dialog.afterClosed().subscribe((res) => console.log(res));
+    dialog.afterClosed().subscribe();
   }
 
   //error dialog
@@ -116,9 +127,11 @@ export class PerfilTerapeutaComponent implements OnInit {
 
   //actualizar passwortd
   updatePassword() {
-    const form = new FormData();
-    form.append('password', this.formUser.value.password);
-    this.apiService.updateAdminPassword(form, this.idE).subscribe({
+    const body = new FormData();
+    body.append('passwordOld', this.formUser.value.password)
+    body.append('passwordNew1', this.formUser.value.password1)
+    body.append('passwordNew2', this.formUser.value.password2)
+    this.apiService.updateUserInfo(body ,'terapeuta/editpass').subscribe({
       next: (res) => {
         if (res.response === 'Success') {
           this.messageError = res.message
@@ -134,4 +147,52 @@ export class PerfilTerapeutaComponent implements OnInit {
       },
     });
   }
+
+  //selectVideo
+  onVideoSelected($event: any): any {
+    if ($event.target.files.length > 0) {
+      const [file] = $event.target.files;
+      this.img = {
+        fileRaw: file,
+        fileName: file.name,
+      };
+    }
+  }
+
+  // selectImage
+  onImageSelected($event: any): any {
+    if ($event.target.files.length > 0) {
+      const [file] = $event.target.files;
+      this.video = {
+        fileRaw: file,
+        fileName: file.name,
+      };
+      console.log(this.video);
+    }
+  }
+
+  //actualizar file
+  updateFile(video: boolean) {
+    let info = {url: '', name: '', data1: '', data2: ''}
+    const form = new FormData();
+    if(video) info = {url: 'terapeuta/editv', name: 'video', data1: this.video.fileRaw, data2: this.video.fileName}
+    else info = {url: 'terapeuta/editimg', name: 'imgpro', data1: this.img.fileRaw, data2: this.img.fileName}
+    form.append(info.name, info.data1, info.data2);
+    this.apiService.updateUserInfo(form, info.url).subscribe({
+      next: (res) => {
+        if (res.response === 'Success') {
+          this.messageError = res.message
+          this.openDialogConfirm()
+        }
+        else {
+          this.messageError = res.message
+          this.openDialogError()
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
 }
