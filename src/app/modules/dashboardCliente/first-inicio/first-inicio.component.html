@@ -3,7 +3,7 @@
     <h3 style="text-align: center;">¡Hola [Nombre]!, Completa estas recomendaciones que tenemos para ti.</h3>
     <hr>
     <form >
-      <div class="uno prefer">
+      <div class="uno prefer" *ngIf="uno">
         <p>¿En que especialidad estas interesado/a?</p>
         <div class="col">
           <span class="radio">
@@ -15,7 +15,7 @@
             name="especialidad"
             checked
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">Especialidad 1</label>
           </span>
           <span class="radio">
             <input
@@ -23,179 +23,142 @@
             formControlName="especialidad"
             id="especialidad1"
             name="especialidad"
-            value="especialidad1"
+            value="especialidad2"
 
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">Especialidad 2</label>
           </span>
           <span class="radio">
             <input
             type="radio"
             formControlName="especialidad"
             id="especialidad1"
-            value="especialidad1"
+            value="especialidad3"
             name="especialidad"
 
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">Especialidad 3</label>
           </span>
           <span class="radio">
             <input
             type="radio"
             formControlName="especialidad"
             id="especialidad1"
-            value="especialidad1"
+            value="especialidad4"
             name="especialidad"
 
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">Especialidad 4</label>
           </span>
           <div class="buttons">
-            <button class="btn btn-secondary" type="button">Siguiente</button>
+            <button class="btn btn-secondary" type="button" (click)="next()">Siguiente</button>
           </div>
         </div>
       </div>
-      <div class="dos prefer">
-        <p>¿En que especialidad estas interesado/a?</p>
+      <div class="dos prefer" *ngIf="dos">
+        <p>¿Que tipo de genero te gustaria?</p>
         <div class="col">
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
+            formControlName="genero"
+            id="genero"
+            value="masculino"
+            name="genero"
             checked
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="genero">Masculino</label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
+            formControlName="genero"
+            id="genero"
+            value="femenino"
+            name="genero"
             >
-            <label for="especialidad">Especialidad</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
-            >
-            <label for="especialidad">Especialidad</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
-            >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">Femenino</label>
           </span>
           <div class="buttons">
-            <button class="btn btn-secondary" type="button">Siguiente</button>
+            <button class="btn btn-secondary" type="button" (click)="next1()">Siguiente</button>
           </div>
         </div>
       </div>
-      <div class="tres prefer">
-        <p>¿En que especialidad estas interesado/a?</p>
+      <div class="tres prefer" *ngIf="tres">
+        <p>¿Con que Rango de edad te gustaria tratar?</p>
         <div class="col">
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
+            formControlName="edad"
+            id="edad"
+            value="20,28"
+            name="edad"
             checked
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="edad">20 - 28</label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
+            formControlName="edad"
+            id="edad"
+            value="29,36"
+            name="edad"
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="edad">29 - 36</label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
+            formControlName="edad"
+            id="edad"
+            value="29,36"
+            name="edad"
             >
-            <label for="especialidad">Especialidad</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
-            >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">37 - 49</label>
           </span>
           <div class="buttons">
-            <button class="btn btn-secondary" type="button">Siguiente</button>
+            <button class="btn btn-secondary" type="button" (click)="next2()">Siguiente</button>
           </div>
         </div>
       </div>
-      <div class="cuatro prefer">
-        <p>¿En que especialidad estas interesado/a?</p>
+      <div class="cuatro prefer" *ngIf="cuatro">
+        <p>¿En que rango de precio buscas?</p>
         <div class="col">
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
+            formControlName="precio"
+            id="precio"
+            value="10,20"
+            name="precio"
             checked
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="precio">10USD - 20USD</label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
+            formControlName="precio"
+            id="precio"
+            value="21,30"
+            name="precio"
             >
-            <label for="especialidad">Especialidad</label>
+            <label for="precio">210USD - 30USD</label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
+            formControlName="precio"
+            id="precio"
+            value="31,50"
+            name="precio"
             >
-            <label for="especialidad">Especialidad</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="especialidad1"
-
-            >
-            <label for="especialidad">Especialidad</label>
+            <label for="especialidad">31USD - 50USD</label>
           </span>
           <div class="buttons">
-            <button class="btn btn-secondary" type="button">Siguiente</button>
+            <button class="btn btn-secondary" type="button" >Enviar</button>
           </div>
         </div>
       </div>

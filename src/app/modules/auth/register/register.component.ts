@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
     form.append('fecha', this.formUser.value.fecha)
     form.append('rol', this.formUser.value.rol)
 
-    this.apiService.register(form).subscribe({
+    this.apiService.registerp(form).subscribe({
       next:(res)=> {
         console.log(res)
       }
@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
     form.append('cedula', this.formUser.value.cedila)
     form.append('rol', this.formUser.value.rol)
 
-    this.apiService.register(form).subscribe({
+    this.apiService.registert(form).subscribe({
       next:(res)=> {
         console.log(res)
       }

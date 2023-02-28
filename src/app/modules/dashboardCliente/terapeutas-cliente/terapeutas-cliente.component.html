@@ -3,31 +3,41 @@
   <div class="contentTerapeutas">
     <div class="filtros">
       <div class="filtro">
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Especialidad
+        <a
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          href="#collapseExample1"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          style="display: flex; justify-content: space-between"
+          (click)="drop()"
+        >
+        <p style="margin: 0">Especialidad</p>
+        <span id="drop1" style="transition: .2s;"><i class="fa-solid fa-caret-down"></i></span>
         </a>
         <div class="collapse" id="collapseExample1">
           <div class="card card-body">
             <p>Filtrar especialidad</p>
             <div class="checks1">
               <span class="check">
-                <input type="checkbox" id="check" >
+                <input type="radio" id="check" />
                 <label for="check">Psicoanalisis</label>
               </span>
               <span class="check">
-                <input type="checkbox" id="check" >
+                <input type="radio" id="check" />
                 <label for="check">Cognitivo Conductual</label>
               </span>
               <span class="check">
-                <input type="checkbox" id="check" >
+                <input type="radio" id="check" />
                 <label for="check">Integrativo</label>
               </span>
               <span class="check">
-                <input type="checkbox" id="check" >
+                <input type="radio" id="check" />
                 <label for="check">Sistémico</label>
               </span>
               <span class="check">
-                <input type="checkbox" id="check" >
+                <input type="radio" id="check" />
                 <label for="check">Humanista</label>
               </span>
             </div>
@@ -35,24 +45,95 @@
         </div>
       </div>
       <div class="filtro">
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Pais
+        <a
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          href="#collapseExample2"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          style="display: flex; justify-content: space-between"
+        >
+        <p style="margin: 0">Genero</p>
+        <span><i class="fa-solid fa-caret-down"></i></span>
         </a>
         <div class="collapse" id="collapseExample2">
           <div class="card card-body">
-            <p>Filtrar especialidad</p>
+            <p>Filtrar genero</p>
             <div class="checks1">
               <span class="check">
-                <input type="checkbox" id="check" >
-                <label for="check">PERÚ</label>
+                <input type="radio" id="check" />
+                <label for="check">MASCULINO</label>
               </span>
               <span class="check">
-                <input type="checkbox" id="check" >
-                <label for="check">MEXICO</label>
+                <input type="radio" id="check" />
+                <label for="check">FEMENINO</label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filtro">
+        <a
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          href="#collapseExample3"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          style="display: flex; justify-content: space-between"
+        >
+        <p style="margin: 0">Edad</p>
+        <span><i class="fa-solid fa-caret-down"></i></span>
+        </a>
+        <div class="collapse" id="collapseExample3">
+          <div class="card card-body">
+            <p>Filtrar edad</p>
+            <div class="checks1">
+              <span class="check">
+                <input type="radio" id="check" />
+                <label for="check">20 - 28</label>
               </span>
               <span class="check">
-                <input type="checkbox" id="check" >
-                <label for="check">COLOMBIA</label>
+                <input type="radio" id="check" />
+                <label for="check">29 - 36</label>
+              </span>
+              <span class="check">
+                <input type="radio" id="check" />
+                <label for="check">37 - 49</label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filtro">
+        <a
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          href="#collapseExample4"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+          style="display: flex; justify-content: space-between"
+        >
+          <p style="margin: 0">Precio</p>
+          <span><i class="fa-solid fa-caret-down"></i></span>
+        </a>
+        <div class="collapse" id="collapseExample4">
+          <div class="card card-body">
+            <p>Filtrar precio</p>
+            <div class="checks1">
+              <span class="check">
+                <input type="radio" id="check" />
+                <label for="check">10USD - 20USD</label>
+              </span>
+              <span class="check">
+                <input type="radio" id="check" />
+                <label for="check">21USD - 30USD</label>
+              </span>
+              <span class="check">
+                <input type="radio" id="check" />
+                <label for="check">31USD - 50USD</label>
               </span>
             </div>
           </div>

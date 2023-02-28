@@ -15,7 +15,8 @@ export class ApiService {
 
   // url = 'http://25.78.142.190:9000/api'
 
-  url = 'http://25.65.134.189:9000/api'
+  // url = 'http://25.65.134.189:9000/api'
+  url = 'https://coralio.onrender.com/api'
 
   // url = 'https://contenedor-production.up.railway.app/api'
 
@@ -31,8 +32,12 @@ export class ApiService {
     return this.http.post<ResponseAuth>(`${this.url}/login`, body)
   }
 
-  register(body: FormData):Observable<ResponseAuth>{
-    return this.http.post<ResponseAuth>(`${this.url}/register`, body)
+  registerp(body: FormData):Observable<ResponseAuth>{
+    return this.http.post<ResponseAuth>(`${this.url}/registerp`, body)
+  }
+
+  registert(body: FormData):Observable<ResponseAuth>{
+    return this.http.post<ResponseAuth>(`${this.url}/registert`, body)
   }
 
    //admin
