@@ -1,3 +1,4 @@
+import { ApiService } from './../../services/api.service';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -13,10 +14,23 @@ export class HeaderCComponent {
   documentos: boolean = false;
   tareas: boolean = false;
   sesiones: boolean = false;
+  nombre: any = 'Nombre'
 
-  constructor() {}
+  constructor( private apiService: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataUser()
+  }
+
+  dataUser(){
+    this.apiService.getUserLogged().subscribe({
+      next: (res)=> {
+        if(res.response === 'Success') this.nombre = res.user.nombre
+      }, error: (err)=> {
+        console.log(err)
+      }
+    })
+  }
 
   salir(){
     localStorage.removeItem('token')

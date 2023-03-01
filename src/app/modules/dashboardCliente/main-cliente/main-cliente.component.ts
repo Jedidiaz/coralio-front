@@ -1,3 +1,4 @@
+import { ApiService } from './../../../services/api.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,13 +14,28 @@ export class MainClienteComponent {
     tareas: false,
     sesiones: false,
   };
-  constructor() {}
+  first: boolean = false
+  constructor( private apiService: ApiService ) {}
 
   ngOnInit(): void {
+    this.dataUser()
     if(!localStorage.getItem('token')) window.location.href = '/'
   }
 
   receiveMessage($event: any) {
     this.recive = $event;
   }
+
+  dataUser(){
+    this.apiService.getUserLogged().subscribe({
+      next: (res)=> {
+        console.log(res)
+        if(res.user.preferencia.length === 0)this.first = true
+        else this.first = false
+      }, error: (err)=> {
+        console.log(err)
+      }
+    })
+  }
+
 }

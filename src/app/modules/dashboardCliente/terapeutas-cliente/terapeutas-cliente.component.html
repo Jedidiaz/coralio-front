@@ -21,23 +21,23 @@
             <p>Filtrar especialidad</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="psicoanalisis" name="filtro" (change)="filtroEspecialidad($event.target)"/>
                 <label for="check">Psicoanalisis</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="cognitivo conductual" name="filtro" (change)="filtroEspecialidad($event.target)" />
                 <label for="check">Cognitivo Conductual</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="integrativo" name="filtro" (change)="filtroEspecialidad($event.target)" />
                 <label for="check">Integrativo</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="sistémico" name="filtro" (change)="filtroEspecialidad($event.target)"/>
                 <label for="check">Sistémico</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="humanista" name="filtro" (change)="filtroEspecialidad($event.target)"/>
                 <label for="check">Humanista</label>
               </span>
             </div>
@@ -62,11 +62,11 @@
             <p>Filtrar genero</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="masculino" name="filtro" (change)="filtroGenero($event.target)"/>
                 <label for="check">MASCULINO</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="femenino" name="filtro" (change)="filtroGenero($event.target)"/>
                 <label for="check">FEMENINO</label>
               </span>
             </div>
@@ -91,15 +91,15 @@
             <p>Filtrar edad</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="20,28" name="filtro" (change)="filtroEdad($event.target)" />
                 <label for="check">20 - 28</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="29,36" name="filtro" (change)="filtroEdad($event.target)" />
                 <label for="check">29 - 36</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="37,49" name="filtro" (change)="filtroEdad($event.target)"/>
                 <label for="check">37 - 49</label>
               </span>
             </div>
@@ -124,15 +124,15 @@
             <p>Filtrar precio</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="10,20" name="filtro" (change)="filtroPrecio($event.target)" />
                 <label for="check">10USD - 20USD</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="21,30" name="filtro" (change)="filtroPrecio($event.target)" />
                 <label for="check">21USD - 30USD</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" />
+                <input type="radio" id="check" value="31,50" name="filtro" (change)="filtroPrecio($event.target)"/>
                 <label for="check">31USD - 50USD</label>
               </span>
             </div>
@@ -140,6 +140,28 @@
         </div>
       </div>
     </div>
-    <div class="contenido"></div>
+    <div class="contenido" *ngIf="terapeutas.length != 0; else elsee">
+      <div class="terapeuta" *ngFor="let element of terapeutas">
+        <div class="img">
+          <img src="" >
+        </div>
+        <div class="description">
+          <div class="desc">
+            <h3 style="margin: 0;">{{ element.nombre || 'Nombre'}}</h3>
+            <h4 style="margin-bottom: 5px; font-size: 14px;">Especialidad</h4>
+            <p style="margin: 0;">Descripcion</p>
+          </div>
+          <div class="descSec">
+            <span>HORA</span>
+            <span>$PRECIO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #elsee>
+      <div>
+        <h2> NO HAY RESULTADOS</h2>
+      </div>
+    </ng-template>
   </div>
 </div>

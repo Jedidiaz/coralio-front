@@ -1,6 +1,6 @@
 import { DataInfoAdminModel, ResponseGetAdminModel, ResponseGetIDAdminModel, ResposeGetAdminTerapiasModel, ResposeGetAdminTerapiasIDModel, ResponseGetAdminBlogModel, ResponseGetAdminBlogOneModel } from './../Models/AdminModels.interface';
 import { ResponseAuth } from './../Models/auth.interface';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -32,12 +32,8 @@ export class ApiService {
     return this.http.post<ResponseAuth>(`${this.url}/login`, body)
   }
 
-  registerp(body: FormData):Observable<ResponseAuth>{
-    return this.http.post<ResponseAuth>(`${this.url}/registerp`, body)
-  }
-
-  registert(body: FormData):Observable<ResponseAuth>{
-    return this.http.post<ResponseAuth>(`${this.url}/registert`, body)
+  register(body: FormData, url: any):Observable<ResponseAuth>{
+    return this.http.post<ResponseAuth>(`${this.url}/${url}`, body)
   }
 
    //admin
@@ -149,5 +145,44 @@ export class ApiService {
     })
   }
 
+  getTerapeutasPacientes():Observable<any>{
+    return this.http.get<any>(`${this.url}/user/see`, {headers: this.headers})
+  }
+
+  //filtros
+  filtrosGet(url:string, data: any, keys: any):Observable<any>{
+    const params = new HttpParams()
+    params.append( keys.key1, data.data1 )
+    params.append( keys.key2, data.data2 )
+
+    return this.http.get<any>(`${this.url}/filtro/${url}`, {
+      headers: this.headers,
+      params: params})
+  }
+
+  filtrosEspecialidad(data: FormData):Observable<any>{
+    return this.http.post<any>(`${this.url}/filtro/especialidad`, data,{
+      headers: this.headers})
+  }
+
+  filtrosGenero(data: any):Observable<any>{
+    const params = new HttpParams()
+    params.append( 'genero', data )
+
+    return this.http.get<any>(`${this.url}/filtro/genero`, {
+      headers: this.headers,
+      params: params})
+  }
+
+  filtrosPreferencia():Observable<any>{
+    return this.http.get<any>(`${this.url}/filtro/preferencia`, {
+      headers: this.headers})
+  }
+
+  //preferencia
+  preferencia( body: FormData ):Observable<any>{
+    return this.http.post<any>(`${this.url}/preferencias`, body,{
+      headers: this.headers})
+  }
 }
 
