@@ -18,13 +18,27 @@
       <h3>Ingresa tus datos</h3>
       <form [formGroup]="formUser" (ngSubmit)="registrar()">
         <div class="group_form">
-          <label for="nombre">Nombre completo*</label>
+          <label for="nombre">Nombre*</label>
           <div class="group_input">
             <input
               type="text"
               id="nombre"
-              placeholder="Juanito Perez"
-              formControlName="nombreCompleto"
+              placeholder="Juanito"
+              formControlName="nombre"
+              required
+              style="width: 100%;"
+            />
+          </div>
+        </div>
+
+        <div class="group_form">
+          <label for="nombre">Apellido*</label>
+          <div class="group_input">
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Perez"
+              formControlName="apellido"
               required
               style="width: 100%;"
             />

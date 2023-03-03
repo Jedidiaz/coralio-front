@@ -111,7 +111,7 @@ export class TerapeutasClienteComponent implements OnInit {
       next: (res)=> {
         console.log(res)
         if (res.response === "Success") {
-          this.terapeutas = res.data
+          this.terapeutas = res.datam
           console.log(this.terapeutas)
         }      }, error: (err)=> {
         console.log(err)

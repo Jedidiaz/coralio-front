@@ -147,13 +147,13 @@
         </div>
         <div class="description">
           <div class="desc">
-            <h3 style="margin: 0;">{{ element.nombre || 'Nombre'}}</h3>
-            <h4 style="margin-bottom: 5px; font-size: 14px;">Especialidad</h4>
-            <p style="margin: 0;">Descripcion</p>
+            <h3 style="margin: 0;">{{ element.nombre + ' ' +element.apellido || 'Nombre'}}</h3>
+            <h4 style="margin-bottom: 5px; font-size: 14px;">{{ element.especialidad[0] ||'Especialidad'}}</h4>
+            <p style="margin: 0;">{{ element.descripcion }}</p>
           </div>
           <div class="descSec">
-            <span>HORA</span>
-            <span>$PRECIO</span>
+            <span>{{element.horai + ' - ' + element.horaf}}</span>
+            <span>{{element.valorh | currency: 'USD'}}</span>
           </div>
         </div>
       </div>

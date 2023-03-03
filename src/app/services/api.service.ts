@@ -152,8 +152,8 @@ export class ApiService {
   //filtros
   filtrosGet(url:string, data: any, keys: any):Observable<any>{
     const params = new HttpParams()
-    params.append( keys.key1, data.data1 )
-    params.append( keys.key2, data.data2 )
+      .append( keys.key1, data.data1 )
+      .append( keys.key2, data.data2 )
 
     return this.http.get<any>(`${this.url}/filtro/${url}`, {
       headers: this.headers,
@@ -167,8 +167,8 @@ export class ApiService {
 
   filtrosGenero(data: any):Observable<any>{
     const params = new HttpParams()
-    params.append( 'genero', data )
-
+      .append( 'genero', data )
+    console.log(params)
     return this.http.get<any>(`${this.url}/filtro/genero`, {
       headers: this.headers,
       params: params})
