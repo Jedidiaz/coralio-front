@@ -11,14 +11,14 @@ export class ApiService {
 
   constructor( private http: HttpClient ) { }
 
-  url = 'https://api-coralio.cmc-software.com/api'
+  // url = 'https://api-coralio.cmc-software.com/api'
 
   // url = 'http://25.78.142.190:9000/api'
 
   // url = 'http://25.65.134.189:9000/api'
   // url = 'https://coralio.onrender.com/api'
 
-  // url = 'https://contenedor-production.up.railway.app/api'
+  url = 'https://api-coralio.cmc-software.com/api'
 
   headers = new HttpHeaders()
   .append('Authorization', 'Bearer ' + localStorage.getItem('token'))
@@ -182,6 +182,15 @@ export class ApiService {
   //preferencia
   preferencia( body: FormData ):Observable<any>{
     return this.http.post<any>(`${this.url}/preferencias`, body,{
+      headers: this.headers})
+  }
+
+  getImages():Observable<any>{
+    return this.http.get<any>(`${this.url}/paciente/imageprof`)
+  }
+
+  getOneTerapeuta(id: any):Observable<any>{
+    return this.http.get<any>(`${this.url}paciente/infoterapeuta/${id}`,{
       headers: this.headers})
   }
 }

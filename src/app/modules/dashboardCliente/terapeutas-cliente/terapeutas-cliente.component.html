@@ -142,7 +142,7 @@
     </div>
     <div class="contenido" *ngIf="terapeutas.length != 0; else elsee">
       <div class="terapeuta" *ngFor="let element of terapeutas">
-        <div class="img">
+        <div class="img" (click)="nextTerapeuta()">
           <img src="" >
         </div>
         <div class="description">

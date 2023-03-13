@@ -1,0 +1,111 @@
+<div class="content">
+  <div class="logo">
+    <img src="../../../../assets/img/coralio_logo.png" routerLink="/" />
+  </div>
+  <div class="contenedor" *ngIf="pagPrev">
+    <div class="boxFloat">
+      <h2 class="title">Registrarse como paciente</h2>
+        <form [formGroup]="formUser" class="seccionNombre body" *ngIf="uno">
+          <span>
+            <label for="nombre">Nombres*</label>
+            <input
+              type="text"
+              id="nombre"
+              class="form-control"
+              placeholder="ej: Juanito"
+              formControlName="nombre"
+              required
+            />
+          </span>
+          <span>
+            <label for="apellido">Apellidos*</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellido"
+              placeholder="ej: Perez"
+              formControlName="apellido"
+              required
+            />
+          </span>
+          <span>
+            <label for="correo">Correo Electronico*</label>
+            <input
+              type="email"
+              id="Correo"
+              class="form-control"
+              placeholder="ej: Juanito@ejemplo.com"
+              formControlName="email"
+              required
+            />
+          </span>
+          <span class="button">
+            <button type="button" class="btn btn-secondary" [disabled]="!formUser.valid"  (click)="next()">
+              Siguiente
+            </button>
+          </span>
+        </form>
+        <form [formGroup]="formUser2" class="seccionPassword body" *ngIf="dos">
+          <span>
+            <label for="passwrod">Contraseña*</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="**********"
+              formControlName="contraseña"
+              required
+            />
+          </span>
+          <span>
+            <label for="password2">Repetir contraseña*</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password2"
+              placeholder="*********"
+              formControlName="contraseña2"
+              required
+            />
+          </span>
+          <span class="button">
+            <button type="button" class="btn btn-secondary" [disabled]="!formUser2.valid" (click)="next2()">
+              Siguiente
+            </button>
+          </span>
+        </form>
+        <form [formGroup]="formUser3" class="seccionImagen body" *ngIf="tres">
+          <h3 style="margin: 0">Seleccione un avatar</h3>
+          <div class="imgAvatar">
+            <span *ngFor="let img of imagenes">
+              <input
+                type="radio"
+                [value]="img"
+                formControlName="image"
+                name="image"
+                required
+                #imgSelect
+              />
+              <img
+                [src]="img.filePath || '../../../../assets/img/loading.gif'"
+                (click)="imgSelect.click()"
+              />
+            </span>
+          </div>
+          <span class="button">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="registar()"
+            >
+              Registrar
+            </button>
+          </span>
+        </form>
+    </div>
+  </div>
+  <div class="wait" *ngIf="pagNext">
+    <h1>¡Tu cuenta se ha creado correctamente!</h1>
+    <h2>Estará pendiente la activacion, te avisaremos</h2>
+  </div>
+</div>

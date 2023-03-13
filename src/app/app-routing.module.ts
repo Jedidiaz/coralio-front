@@ -1,3 +1,5 @@
+import { RegisterTerapeutaComponent } from './modules/auth/register-terapeuta/register-terapeuta.component';
+import { RegisterPacienteComponent } from './modules/auth/register-paciente/register-paciente.component';
 import { BlogsComponent } from './modules/blogs/blogs.component';
 import { MainAdminComponent } from './modules/dashboardAdmin/main-admin/main-admin.component';
 import { BarTComponent } from './shared/bar-t/bar-t.component';
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path: 'blog', component: BlogsComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
+  {path: 'register-paciente', component: RegisterPacienteComponent },
+  {path: 'register-terapeuta', component: RegisterTerapeutaComponent },
   {path: 'cliente', component: MainClienteComponent },
   {path: 'terapeuta', component: MainTerapeutaComponent },
   {path: 'bar', component: BarTComponent },

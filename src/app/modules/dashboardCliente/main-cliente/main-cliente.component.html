@@ -10,10 +10,11 @@
       <app-header-c (messageEvent)="receiveMessage($event)"></app-header-c>
       <div class="contentDash">
         <app-inicio-cliente *ngIf="recive.inicio"></app-inicio-cliente>
-        <app-terapeutas-cliente *ngIf="recive.terapeutas"></app-terapeutas-cliente>
+        <app-terapeutas-cliente (messageEvent)="receiveMessage($event)" *ngIf="recive.terapeutas"></app-terapeutas-cliente>
         <app-terapias-cliente *ngIf="recive.tareas"></app-terapias-cliente>
         <app-sesiones-cliente *ngIf="recive.sesiones"></app-sesiones-cliente>
         <app-perfil-cliente *ngIf="recive.documentos"></app-perfil-cliente>
+        <app-ver-terapeuta *ngIf="recive.ver"></app-ver-terapeuta>
         <app-footer-t ></app-footer-t>
       </div>
     </div>

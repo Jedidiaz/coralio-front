@@ -13,6 +13,7 @@ export class MainClienteComponent {
     documentos: false,
     tareas: false,
     sesiones: false,
+    ver: false
   };
   first: boolean = false
   constructor( private apiService: ApiService ) {}

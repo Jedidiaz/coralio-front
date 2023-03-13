@@ -1,5 +1,5 @@
 import { ApiService } from './../../../services/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-terapeutas-cliente',
@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./terapeutas-cliente.component.scss']
 })
 export class TerapeutasClienteComponent implements OnInit {
-
+  @Output() messageEvent = new EventEmitter<any>();
   terapeutas: Array<any> = []
-
+  ver:boolean = false
   constructor ( private apiService: ApiService ){}
 
   ngOnInit(): void {
@@ -117,5 +117,16 @@ export class TerapeutasClienteComponent implements OnInit {
         console.log(err)
       }
     })
+  }
+
+  nextTerapeuta(){
+    this.messageEvent.emit({
+      inicio: false,
+      terapeutas: false,
+      documentos: false,
+      tareas: false,
+      sesiones: false,
+      ver: true
+    });
   }
 }

@@ -61,6 +61,9 @@ import { PerfilClienteComponent } from './modules/dashboardCliente/perfil-client
 import { PerfilTerapeutaComponent } from './modules/dashboardTerapeutas/perfil-terapeuta/perfil-terapeuta.component';
 import { PupopTerapiaComponent } from './shared/pupop-terapia/pupop-terapia.component';
 import { FirstInicioComponent } from './modules/dashboardCliente/first-inicio/first-inicio.component';
+import { VerTerapeutaComponent } from './modules/dashboardCliente/ver-terapeuta/ver-terapeuta.component';
+import { RegisterPacienteComponent } from './modules/auth/register-paciente/register-paciente.component';
+import { RegisterTerapeutaComponent } from './modules/auth/register-terapeuta/register-terapeuta.component';
 
 
 @NgModule({
@@ -108,6 +111,9 @@ import { FirstInicioComponent } from './modules/dashboardCliente/first-inicio/fi
     PerfilTerapeutaComponent,
     PupopTerapiaComponent,
     FirstInicioComponent,
+    VerTerapeutaComponent,
+    RegisterPacienteComponent,
+    RegisterTerapeutaComponent,
   ],
   imports: [
     BrowserModule,
