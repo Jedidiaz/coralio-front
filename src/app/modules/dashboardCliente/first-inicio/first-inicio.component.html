@@ -3,182 +3,851 @@
     <h3 style="text-align: center;">¡Hola <span>{{ nombre ||'[Nombre]' }}</span>!, Completa estas recomendaciones que tenemos para ti.</h3>
     <hr>
     <form [formGroup]="formPrefer" >
-      <div class="uno prefer" *ngIf="uno">
-        <p>¿En que especialidad estas interesado/a?</p>
-        <div class="col">
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="psicoanalisis"
-            name="especialidad"
-            #especialidad
-            checked
-            >
-            <label for="especialidad">Psicoanalisis</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            name="especialidad"
-            value="cognitivoconductual"
-            #especialidad
-            >
-            <label for="especialidad">Cognitivo Conductual</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="integrativo"
-            name="especialidad"
-            #especialidad
-            >
-            <label for="especialidad">Integrativo</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="sistemico"
-            name="especialidad"
-            #especialidad
-            >
-            <label for="especialidad">Sistémico</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="especialidad"
-            id="especialidad1"
-            value="Humanista"
-            name="especialidad"
-            #especialidad
-            >
-            <label for="especialidad">Humanista</label>
-          </span>
-          <div class="buttons">
-            <button class="btn btn-secondary" type="button" (click)="next(especialidad.value)">Siguiente</button>
-          </div>
-        </div>
-      </div>
-      <div class="dos prefer" *ngIf="dos">
-        <p>¿Que tipo de genero te gustaria?</p>
-        <div class="col">
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="genero"
-            id="genero"
-            value="masculino"
-            name="genero"
-            #genero
-            checked
-            >
-            <label for="genero">Masculino</label>
-          </span>
-          <span class="radio">
-            <input
-            type="radio"
-            formControlName="genero"
-            id="genero"
-            value="femenino"
-            name="genero"
-            #genero
-            >
-            <label for="especialidad">Femenino</label>
-          </span>
-          <div class="buttons">
-            <button class="btn btn-secondary" type="button" (click)="next1(genero.value)">Siguiente</button>
-          </div>
-        </div>
-      </div>
-      <div class="tres prefer" *ngIf="tres">
-        <p>¿Con que Rango de edad te gustaria tratar?</p>
+      <div class="tres prefer" *ngIf="uno">
+        <p>¿Nos regalarías tu edad? </p>
         <div class="col">
           <span class="radio">
             <input
             type="radio"
             formControlName="edad"
+            class="form-check-input"
             id="edad"
             value="20,28"
             name="edad"
             #edad
             checked
             >
-            <label for="edad">20 - 28</label>
+            <label for="edad">8-12 años</label>
           </span>
           <span class="radio">
             <input
             type="radio"
             formControlName="edad"
+            class="form-check-input"
             id="edad"
             value="29,36"
             name="edad"
             #edad
             >
-            <label for="edad">29 - 36</label>
+            <label for="edad">13-18 años</label>
           </span>
           <span class="radio">
             <input
             type="radio"
             formControlName="edad"
+            class="form-check-input"
             id="edad"
             value="29,36"
             name="edad"
             #edad
             >
-            <label for="especialidad">37 - 49</label>
+            <label for="especialidad">18-25 años</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="edad"
+            class="form-check-input"
+            id="edad"
+            value="29,36"
+            name="edad"
+            #edad
+            >
+            <label for="especialidad">26-35 años</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="edad"
+            class="form-check-input"
+            id="edad"
+            value="29,36"
+            name="edad"
+            #edad
+            >
+            <label for="especialidad">35-50 años</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="edad"
+            class="form-check-input"
+            id="edad"
+            value="29,36"
+            name="edad"
+            #edad
+            >
+            <label for="especialidad">50-64 años</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="edad"
+            class="form-check-input"
+            id="edad"
+            value="29,36"
+            name="edad"
+            #edad
+            >
+            <label for="especialidad">64- en adelante</label>
           </span>
           <div class="buttons">
-            <button class="btn btn-secondary" type="button" (click)="next2(edad.value)">Siguiente</button>
+            <button class="btn btn-secondary" type="button" (click)="next(edad.value)">Siguiente</button>
           </div>
         </div>
       </div>
-      <div class="cuatro prefer" *ngIf="cuatro">
-        <p>¿En que rango de precio buscas?</p>
+      <div class="uno prefer" *ngIf="dos">
+        <p>¿Qué tipo de sesión buscas?</p>
         <div class="col">
           <span class="radio">
             <input
             type="radio"
-            formControlName="precio"
-            id="precio"
-            value="10,20"
-            name="precio"
-            #precio
+            formControlName="sesion"
+            class="form-check-input"
+            id="sesion1"
+            value="Individual"
+            name="sesion"
+            #sesion
             checked
             >
-            <label for="precio">10USD - 20USD</label>
+            <label for="sesion1">Individual, busco enfocarme en mí </label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="precio"
-            id="precio"
-            value="21,30"
-            name="precio"
-            #precio
+            formControlName="sesion"
+            class="form-check-input"
+            id="sesion2"
+            name="sesion"
+            value="De pareja"
+            #sesion
             >
-            <label for="precio">210USD - 30USD</label>
+            <label for="sesion2">De pareja, perfecto para 2 personas </label>
           </span>
           <span class="radio">
             <input
             type="radio"
-            formControlName="precio"
-            id="precio"
-            value="31,50"
-            name="precio"
-            #precio
+            formControlName="sesion"
+            class="form-check-input"
+            id="sesion3"
+            value="Grupal"
+            name="sesion"
+            #sesion
             >
-            <label for="especialidad">31USD - 50USD</label>
+            <label for="sesion3">Grupal, más de 2 personas </label>
           </span>
           <div class="buttons">
-            <button class="btn btn-secondary" type="button" (click)="prefer(precio.value)">Enviar</button>
+            <button class="btn btn-secondary" type="button" (click)="next1(sesion.value)">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="tres">
+        <p>¿Qué modelo de terapia estás buscando?</p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad1"
+            value="Psicodinámico"
+            name="especialidad"
+            #especialidad
+            checked
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad1">Psicodinámico</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad2"
+            value="Humanista"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad2">Humanista</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad3"
+            value="Cognitivo-Conductual"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad3">Cognitivo-Conductual</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad4"
+            value="Sistémico"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad4">Sistémico</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad5"
+            value="Gestalt"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad5">Gestalt</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad6"
+            value="Aceptación y Compromiso"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad6">Aceptación y Compromiso</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad7"
+            value="Breve"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad7">Breve</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="especialidad"
+            class="form-check-input"
+            id="especialidad8"
+            value="Aún no lo sé, ¡Me gustaría explorar!"
+            name="especialidad"
+            #especialidad
+            (change)="especial($event.target)"
+            >
+            <label for="especialidad8">Aún no lo sé, ¡Me gustaría explorar!</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next2(especialidad.value)">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="cuatro">
+        <p>¿Con quién te sentirás más cómodo compartiendo tu situación?</p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero1"
+            value="Femenino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero1">Una Mujer</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero2"
+            value="Masculino"
+            name="genero"
+            #genero
+            >
+            <label for="genero2">Un Hombre</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero3"
+            [value]="null"
+            name="genero"
+            #genero
+            >
+            <label for="genero3">Me es indiferente</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next3(genero.value)">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="cinco">
+        <p>¿En qué horario tendrías tu sesión? </p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="hora"
+            class="form-check-input"
+            id="hora1"
+            value="8:00"
+            name="hora"
+            #hora
+            checked
+            >
+            <label for="hora1">8:00 am- 12:00 pm</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="hora"
+            class="form-check-input"
+            id="hora2"
+            value="12:00"
+            name="hora"
+            #hora
+            >
+            <label for="horas2">12:00 pm- 4:00 pm</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="hora"
+            class="form-check-input"
+            id="hora3"
+            value="16:00"
+            name="hora"
+            #hora
+            >
+            <label for="horas3">4:00 pm- 8:00 pm</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next4(hora.value)">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="seis">
+        <p>¿Cuánto buscas que dure tu proceso de sanación?  </p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">1-2 meses</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">3-12 meses</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">1-2 años</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Indefinido</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next5()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="siete">
+        <p>¿Cómo esperas que sea el avance de tu proceso? </p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">Conciso, enfocado y con objetivos <br> alcanzables a corto plazo</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">A un ritmo moderado, abriendo la <br> posibilidad de tratar temas conforme <br> vayan saliendo.</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">No tengo prisa, busco estar en constante <br> crecimiento poniendo a prueba lo <br> que vaya aprendiendo.</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">No lo sé aún, habría que descubrirlo.</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next6()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="ocho">
+        <p>¿Qué buscas en el proceso de sanación?</p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">Ejercicios prácticos durante la sesión</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Sentirse escuchado y aprender nuevas <br> herramientas a poner a prueba</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Ejercicios prácticos para fuera de la sesión</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Ejercicios prácticos dentro y fuera de la sesión</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">No lo se por el momento</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next7()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="nueve">
+        <p>¿Qué buscas en un terapeuta?</p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">Que sea directo y a través de <br> una conversación asertiva</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Que expanda mi mente profundizando <br> en mis emociones y pensamientos.</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Estoy abierto a ambas opciones</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">No lo se por el momento</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next8()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="dies">
+        <p>¿Qué enfoque buscas de la terapia?</p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">Ayuda para manejar mis emociones</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Ayuda para proponerme metas y cumplirlas</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Mejorar mis relaciones</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Hablar sobre mi sexualidad</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Reprimir mis conductas autodestructivas</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Mejorar mi autoestima</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Mejorar mi alimentación y sentirme bien con mi cuerpo</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next9()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="once">
+        <p>¿Estarías abierto a la posibilidad de terapia nutricional? </p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">Por supuesto</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">No lo creo</label>
+          </span>
+          <span class="radio">
+            <input
+            type="radio"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Aún no lo se, posiblemente en un futuro</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="next10()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div class="dos prefer" *ngIf="doce">
+        <p>Marca 3 motivos por los cuales buscas acudir a terapia </p>
+        <div class="col">
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="masculino"
+            name="genero"
+            #genero
+            checked
+            >
+            <label for="genero">Mejorar mis relaciones</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Aumentar mi autoestima</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Corregir conductas</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Alcanzar metas personales y/o profesionales</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Trastornos alimenticios</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Alcanzar la introspección emocional</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Aumentar mi Inteligencia emocional</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Manejar mis emociones correctamente</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Tratar mi depresión</label>
+          </span>
+          <span class="radio">
+            <input
+            type="checkbox"
+            formControlName="genero"
+            class="form-check-input"
+            id="genero"
+            value="femenino"
+            name="genero"
+            #genero
+            >
+            <label for="especialidad">Alcanzar un diagnóstico de mi salud mental</label>
+          </span>
+          <div class="buttons">
+            <button class="btn btn-secondary" type="button" (click)="prefer()" >Siguiente</button>
           </div>
         </div>
       </div>
