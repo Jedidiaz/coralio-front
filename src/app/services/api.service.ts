@@ -179,9 +179,19 @@ export class ApiService {
       headers: this.headers})
   }
 
+  filtrarTerapeuta( body:FormData ):Observable<any>{
+    return this.http.post<any>(`${this.url}/filtro/paciente/pref`, body,{
+      headers: this.headers})
+  }
+
   //preferencia
-  preferencia( body: FormData ):Observable<any>{
-    return this.http.post<any>(`${this.url}/preferencias`, body,{
+  preferencia( body: any ):Observable<any>{
+    return this.http.put<any>(`${this.url}/preferencias`, body,{
+      headers: this.headers})
+  }
+
+  expediente( body: any ):Observable<any>{
+    return this.http.put<any>(`${this.url}/paciente/expediente`, body,{
       headers: this.headers})
   }
 
@@ -190,7 +200,7 @@ export class ApiService {
   }
 
   getOneTerapeuta(id: any):Observable<any>{
-    return this.http.get<any>(`${this.url}paciente/infoterapeuta/${id}`,{
+    return this.http.get<any>(`${this.url}/paciente/infoterapeuta/${id}`,{
       headers: this.headers})
   }
 }

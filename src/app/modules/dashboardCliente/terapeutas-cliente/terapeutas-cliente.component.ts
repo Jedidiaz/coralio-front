@@ -10,6 +10,10 @@ export class TerapeutasClienteComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
   terapeutas: Array<any> = []
   ver:boolean = false
+  especialidades:any = []
+  horas: any = []
+  genero: any = ''
+  sesion: any = ''
   constructor ( private apiService: ApiService ){}
 
   ngOnInit(): void {
@@ -107,26 +111,104 @@ export class TerapeutasClienteComponent implements OnInit {
   }
 
   filtroPreferencias(){
-    this.apiService.filtrosPreferencia().subscribe({
+    // this.apiService.filtrosPreferencia().subscribe({
+    //   next: (res)=> {
+    //     console.log(this.terapeutas)
+    //     this.terapeutas = res.preferencias
+    //     if (res.response === "Success") {
+    //         this.terapeutas = res.preferencias
+    //         console.log(this.terapeutas)
+    //     }
+    //   }, error:(err)=> {console.log(err)}
+    // })
+    const form = new FormData()
+    this.apiService.filtrarTerapeuta(form).subscribe({
       next: (res)=> {
         console.log(res)
         if (res.response === "Success") {
-          this.terapeutas = res.datam
+          this.terapeutas = res.preferencias
           console.log(this.terapeutas)
         }      }, error: (err)=> {
-        console.log(err)
+        // console.log(err)
       }
     })
   }
 
-  nextTerapeuta(){
+  filtrar(){
+    const form = new FormData()
+    this.especialidades.length > 0 && form.append('terapia', JSON.stringify(this.especialidades))
+    this.horas.length > 0 && form.append('horario', JSON.stringify(this.horas))
+    this.genero && form.append('genero', this.genero)
+    this.sesion && form.append('sesion', this.sesion)
+    this.apiService.filtrarTerapeuta(form).subscribe({
+      next: (res)=> {
+        console.log(res)
+        if (res.response === "Success") {
+          this.terapeutas = res.preferencias
+          console.log(this.terapeutas)
+        }      }, error: (err)=> {
+        // console.log(err)
+      }
+    })
+  }
+
+  addEspecialidad($event: any){
+    if ($event.target.checked){
+      this.especialidades.push($event.target.value)
+      this.filtrar()
+    }else{
+      this.especialidades = this.especialidades.filter((el:any) => el != $event.target.value)
+      this.filtrar()
+    }
+    console.log(this.especialidades)
+  }
+
+  addHora($event: any){
+    if ($event.target.checked){
+      this.horas.push($event.target.value)
+      this.filtrar()
+    }else{
+      this.horas = this.horas.filter((el:any) => el != $event.target.value)
+      this.filtrar()
+    }
+    console.log(this.horas)
+  }
+
+  addGenero($event: any){
+    this.genero = $event.target.value
+    console.log(this.genero)
+    this.filtrar()
+  }
+
+  addSesion($event: any){
+    this.sesion = $event.target.value
+    console.log(this.sesion)
+    this.filtrar()
+  }
+
+  clearSesion(){
+    (document.getElementById('sesion1') as HTMLInputElement).checked = false;
+    (document.getElementById('sesion2') as HTMLInputElement).checked = false;
+    (document.getElementById('sesion3') as HTMLInputElement).checked = false;
+    this.sesion = ''
+  }
+
+  clearGenero(){
+    (document.getElementById('genero1') as HTMLInputElement).checked = false;
+    (document.getElementById('genero2') as HTMLInputElement).checked = false;
+    (document.getElementById('genero3') as HTMLInputElement).checked = false;
+    this.sesion = ''
+  }
+
+  nextTerapeuta(id: any){
     this.messageEvent.emit({
       inicio: false,
       terapeutas: false,
       documentos: false,
       tareas: false,
       sesiones: false,
-      ver: true
+      ver: true,
+      id: id
     });
   }
 }

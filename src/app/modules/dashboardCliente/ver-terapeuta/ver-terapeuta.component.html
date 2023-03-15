@@ -8,15 +8,15 @@
         <img src="../../../../assets/img/paciente.png">
       </div>
       <div class="desc">
-        <h3>NOMBRE</h3>
-        <p>Especialidad(es):</p>
-        <p>Genero: </p>
-        <p>Edad: </p>
-        <p>Horario: </p>
+        <h3>{{ terapeuta.nombre + ' ' + terapeuta.apellido || 'NOMBRE' }}</h3>
+        <p>Especialidad(es): {{terapeuta.especialidad}}</p>
+        <p>Genero: {{terapeuta.genero}}</p>
+        <p>Edad: {{terapeuta.edad}}</p>
+        <p>Horario: {{terapeuta.horai + ' - ' + terapeuta.horaf}}</p>
       </div>
     </div>
     <div class="sesion2">
-      <p>descripcion</p>
+      <p>{{ terapeuta.descripcion || 'No hay descripcion'}}</p>
     </div>
   <div class="pagos"></div>
 </div>

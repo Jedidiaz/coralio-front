@@ -13,7 +13,8 @@ export class MainClienteComponent {
     documentos: false,
     tareas: false,
     sesiones: false,
-    ver: false
+    ver: false,
+    id: ''
   };
   first: boolean = false
   constructor( private apiService: ApiService ) {}
@@ -33,6 +34,7 @@ export class MainClienteComponent {
         console.log(res)
         if(res.user.preferencia.length === 0)this.first = true
         else this.first = false
+        localStorage.setItem('preferencia', JSON.stringify(res.user.preferencia))
       }, error: (err)=> {
         console.log(err)
       }

@@ -23,7 +23,8 @@ export class FirstInicioComponent implements OnInit {
   doce: boolean = false;
 
   nombre: any = 'Nombre';
-  preferencias: any = {terapia: [], genero: '', sesion: '', horario: []}
+  preferencias: any = {terapia: [], genero: '', sesion: '', horario: [], nutricional: ''}
+  acudir:any = []
 
   constructor(
     private formbuilder: FormBuilder,
@@ -33,17 +34,24 @@ export class FirstInicioComponent implements OnInit {
       especialidad: ['', Validators.required],
       genero: ['', Validators.required],
       edad: ['', Validators.required],
-      precio: ['', Validators.required],
       hora: ['', Validators.required],
       sesion: ['', Validators.required],
+      tiempoS: ['', Validators.required],
+      avance: ['', Validators.required],
+      sanacion: ['', Validators.required],
+      buscarT: ['', Validators.required],
+      enfoque: ['', Validators.required],
+      nutri: ['', Validators.required],
+      acudir: ['', Validators.required],
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getUser()
+  }
 
   getUser() {
     this.apiService.getUserLogged().subscribe({
       next: (res) => {
-        console.log(res);
         this.nombre = res.user.nombre;
       },
       error: (err) => {
@@ -126,7 +134,7 @@ export class FirstInicioComponent implements OnInit {
     this.dies = false;
     this.once = false;
     this.doce = false;
-    this.preferencias.horario = target
+    this.preferencias.horario.push(target)
   }
 
   next5() {
@@ -223,11 +231,27 @@ export class FirstInicioComponent implements OnInit {
     this.once = false;
     this.doce = true;
     // this.preferencias.genero = target
+    this.preferencias.nutricional = this.formPrefer.value.nutri
   }
 
   prefer() {
-    const data = `${this.formPrefer.value.edad},${this.formPrefer.value.genero},${this.formPrefer.value.precio},${this.formPrefer.value.especialidad}`;
-    console.log(data)
+    const body = [
+      this.formPrefer.value.edad,
+      this.formPrefer.value.tiempoS,
+      this.formPrefer.value.avance,
+      this.formPrefer.value.sanacion,
+      this.formPrefer.value.buscarT,
+      this.formPrefer.value.enfoque,
+      this.formPrefer.value.acudir,
+    ]
+    this.apiService.expediente(body).subscribe({
+      next: (res)=> {
+        console.log(res)
+      }, error:(err)=> {
+        console.log(err)
+      }
+    })
+
     this.apiService.preferencia(this.preferencias).subscribe({
       next: (res)=> {
         console.log(res)
@@ -238,8 +262,21 @@ export class FirstInicioComponent implements OnInit {
     })
   }
 
-  especial(target: any){
-    this.preferencias.terapia.push(target.value)
+  especial($event: any){
+    if ($event.target.checked){
+      this.preferencias.terapia.push($event.target.value)
+    }else{
+      this.preferencias.terapia = this.preferencias.terapia.filter((el:any) => el != $event.target.value)
+    }
     console.log(this.preferencias.terapia)
+  }
+
+  acudirPrefer($event: any){
+    if ($event.target.checked){
+      this.acudir.push($event.target.value)
+    }else{
+     this.acudir = this.acudir.filter((el:any) => el != $event.target.value)
+    }
+    console.log(this.acudir)
   }
 }

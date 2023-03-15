@@ -13,32 +13,91 @@
           style="display: flex; justify-content: space-between"
           (click)="drop()"
         >
-        <p style="margin: 0">Especialidad</p>
-        <span id="drop1" style="transition: .2s;"><i class="fa-solid fa-caret-down"></i></span>
+          <p style="margin: 0">Especialidad</p>
+          <span id="drop1" style="transition: 0.2s"
+            ><i class="fa-solid fa-caret-down"></i
+          ></span>
         </a>
         <div class="collapse" id="collapseExample1">
           <div class="card card-body">
             <p>Filtrar especialidad</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" value="psicoanalisis" name="filtro" (change)="filtroEspecialidad($event.target)"/>
-                <label for="check">Psicoanalisis</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Psicodinámica"
+                  name="especialidad"
+                  (change)="addEspecialidad($event)"
+                />
+                <label for="check">Psicodinámico</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="cognitivo conductual" name="filtro" (change)="filtroEspecialidad($event.target)" />
-                <label for="check">Cognitivo Conductual</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Humanista"
+                  name="especialidad"
+                  (change)="addEspecialidad($event)"
+                />
+                <label for="check">Humanista</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="integrativo" name="filtro" (change)="filtroEspecialidad($event.target)" />
-                <label for="check">Integrativo</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Cognitivo-Conductual"
+                  name="especialidad"
+                  (change)="addEspecialidad($event)"
+                />
+                <label for="check">Cognitivo-Conductual</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="sistémico" name="filtro" (change)="filtroEspecialidad($event.target)"/>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Sistemica"
+                  name="especialidad"
+                  (change)="addEspecialidad($event)"
+                />
                 <label for="check">Sistémico</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="humanista" name="filtro" (change)="filtroEspecialidad($event.target)"/>
-                <label for="check">Humanista</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Gestalt"
+                  name="especialidad"
+                  (change)="addEspecialidad($event)"
+                />
+                <label for="check">Gestalt</label>
+              </span>
+              <span class="check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Aceptación y Compromiso"
+                  name="especialidad"
+                  (change)="addEspecialidad($event)"
+                />
+                <label for="check">Aceptación y Compromiso</label>
+              </span>
+              <span class="check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="check"
+                  value="Breve"
+                  name="especialidad"
+                  (change)="addEspecialidad($event.target)"
+                />
+                <label for="check">Breve</label>
               </span>
             </div>
           </div>
@@ -54,21 +113,36 @@
           aria-controls="collapseExample"
           style="display: flex; justify-content: space-between"
         >
-        <p style="margin: 0">Genero</p>
-        <span><i class="fa-solid fa-caret-down"></i></span>
+          <p style="margin: 0">Genero</p>
+          <span><i class="fa-solid fa-caret-down"></i></span>
         </a>
         <div class="collapse" id="collapseExample2">
           <div class="card card-body">
             <p>Filtrar genero</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" value="masculino" name="filtro" (change)="filtroGenero($event.target)"/>
-                <label for="check">MASCULINO</label>
+                <input
+                  type="radio"
+                  id="genero1"
+                  class="form-check-input"
+                  value="Masculino"
+                  name="genero"
+                  (change)="addGenero($event)"
+                />
+                <label for="genero1">MASCULINO</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="femenino" name="filtro" (change)="filtroGenero($event.target)"/>
-                <label for="check">FEMENINO</label>
+                <input
+                  type="radio"
+                  id="genero2"
+                  class="form-check-input"
+                  value="Femenino"
+                  name="genero"
+                  (change)="addGenero($event)"
+                />
+                <label for="genero2">FEMENINO</label>
               </span>
+              <button class="btn btn-secondary" type="button" style="margin-top: 5px;" (click)="clearGenero()" >Limpiar</button>
             </div>
           </div>
         </div>
@@ -83,24 +157,45 @@
           aria-controls="collapseExample"
           style="display: flex; justify-content: space-between"
         >
-        <p style="margin: 0">Edad</p>
-        <span><i class="fa-solid fa-caret-down"></i></span>
+          <p style="margin: 0">Hora</p>
+          <span><i class="fa-solid fa-caret-down"></i></span>
         </a>
         <div class="collapse" id="collapseExample3">
           <div class="card card-body">
-            <p>Filtrar edad</p>
+            <p>Filtrar hora</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" value="20,28" name="filtro" (change)="filtroEdad($event.target)" />
-                <label for="check">20 - 28</label>
+                <input
+                  type="checkbox"
+                  id="check"
+                  value="8:00"
+                  class="form-check-input"
+                  name="hora"
+                  (change)="addHora($event)"
+                />
+                <label for="check">8:00 am- 12:00 pm</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="29,36" name="filtro" (change)="filtroEdad($event.target)" />
-                <label for="check">29 - 36</label>
+                <input
+                  type="checkbox"
+                  id="check"
+                  value="12:00"
+                  class="form-check-input"
+                  name="hora"
+                  (change)="addHora($event)"
+                />
+                <label for="check">12:00 pm- 4:00 pm</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="37,49" name="filtro" (change)="filtroEdad($event.target)"/>
-                <label for="check">37 - 49</label>
+                <input
+                  type="checkbox"
+                  id="check"
+                  value="16:00"
+                  class="form-check-input"
+                  name="hora"
+                  (change)="addHora($event)"
+                />
+                <label for="check">4:00 pm- 8:00 pm</label>
               </span>
             </div>
           </div>
@@ -116,25 +211,47 @@
           aria-controls="collapseExample"
           style="display: flex; justify-content: space-between"
         >
-          <p style="margin: 0">Precio</p>
+          <p style="margin: 0">Sesion</p>
           <span><i class="fa-solid fa-caret-down"></i></span>
         </a>
         <div class="collapse" id="collapseExample4">
           <div class="card card-body">
-            <p>Filtrar precio</p>
+            <p>Filtrar sesion</p>
             <div class="checks1">
               <span class="check">
-                <input type="radio" id="check" value="10,20" name="filtro" (change)="filtroPrecio($event.target)" />
-                <label for="check">10USD - 20USD</label>
+                <input
+                  type="radio"
+                  id="sesion1"
+                  value="Individual"
+                  name="sesion"
+                  class="form-check-input"
+                  (change)="addSesion($event)"
+                />
+                <label for="sesion1">Individual</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="21,30" name="filtro" (change)="filtroPrecio($event.target)" />
-                <label for="check">21USD - 30USD</label>
+                <input
+                  type="radio"
+                  id="sesion2"
+                  value="Pareja"
+                  name="sesion"
+                  class="form-check-input"
+                  (change)="addSesion($event)"
+                />
+                <label for="sesion2">Pareja</label>
               </span>
               <span class="check">
-                <input type="radio" id="check" value="31,50" name="filtro" (change)="filtroPrecio($event.target)"/>
-                <label for="check">31USD - 50USD</label>
+                <input
+                  type="radio"
+                  id="sesion3"
+                  value="Familiar"
+                  name="sesion"
+                  class="form-check-input"
+                  (change)="addSesion($event)"
+                />
+                <label for="sesion3">Familiar</label>
               </span>
+            <button class="btn btn-secondary" type="button" style="margin-top: 5px;" (click)="clearSesion()" >Limpiar</button>
             </div>
           </div>
         </div>
@@ -142,25 +259,30 @@
     </div>
     <div class="contenido" *ngIf="terapeutas.length != 0; else elsee">
       <div class="terapeuta" *ngFor="let element of terapeutas">
-        <div class="img" (click)="nextTerapeuta()">
-          <img src="" >
+        <div class="img" (click)="nextTerapeuta(element._id)">
+          <p>{{ element.id }}</p>
+          <img src="" />
         </div>
         <div class="description">
           <div class="desc">
-            <h3 style="margin: 0;">{{ element.nombre + ' ' +element.apellido || 'Nombre'}}</h3>
-            <h4 style="margin-bottom: 5px; font-size: 14px;">{{ element.especialidad[0] ||'Especialidad'}}</h4>
-            <p style="margin: 0;">{{ element.descripcion }}</p>
+            <h3 style="margin: 0">
+              {{ element.nombre + " " + element.apellido || "Nombre" }}
+            </h3>
+            <h4 style="margin-bottom: 5px; font-size: 14px">
+              {{ element.especialidad[0] || "Especialidad" }}
+            </h4>
+            <p style="margin: 0">{{ element.descripcion }}</p>
           </div>
           <div class="descSec">
-            <span>{{element.horai + ' - ' + element.horaf}}</span>
-            <span>{{element.valorh | currency: 'USD'}}</span>
+            <span>{{ element.horai + " - " + element.horaf }}</span>
+            <span>{{ element.valorh | currency : "USD" }}</span>
           </div>
         </div>
       </div>
     </div>
     <ng-template #elsee>
       <div>
-        <h2> NO HAY RESULTADOS</h2>
+        <h2>NO HAY RESULTADOS</h2>
       </div>
     </ng-template>
   </div>

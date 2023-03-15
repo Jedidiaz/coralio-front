@@ -14,7 +14,7 @@
         <app-terapias-cliente *ngIf="recive.tareas"></app-terapias-cliente>
         <app-sesiones-cliente *ngIf="recive.sesiones"></app-sesiones-cliente>
         <app-perfil-cliente *ngIf="recive.documentos"></app-perfil-cliente>
-        <app-ver-terapeuta *ngIf="recive.ver"></app-ver-terapeuta>
+        <app-ver-terapeuta *ngIf="recive.ver" [id]="recive.id"></app-ver-terapeuta>
         <app-footer-t ></app-footer-t>
       </div>
     </div>
