@@ -14,6 +14,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { RegisterComponent } from './modules/auth/register/register.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { FirstInicioComponent } from './modules/dashboardCliente/first-inicio/first-inicio.component';
 
 const routes: Routes = [
   {path: '404', component: ErrorPageComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'terapeuta', component: MainTerapeutaComponent },
   {path: 'bar', component: BarTComponent },
   {path: 'admin', component: MainAdminComponent },
-
+  {path: 'primerinicio', component: FirstInicioComponent },
 ]
 
 
