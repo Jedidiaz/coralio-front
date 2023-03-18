@@ -1,5 +1,7 @@
 import { ApiService } from './../../../services/api.service';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+
+declare var paypal: any;
 
 @Component({
   selector: 'app-terapeutas-cliente',
@@ -211,4 +213,5 @@ export class TerapeutasClienteComponent implements OnInit {
       id: id
     });
   }
+
 }

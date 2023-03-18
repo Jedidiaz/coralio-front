@@ -1,5 +1,7 @@
 import { ApiService } from './../../../services/api.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+
+declare var paypal:any ;
 
 @Component({
   selector: 'app-ver-terapeuta',
@@ -7,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./ver-terapeuta.component.scss']
 })
 export class VerTerapeutaComponent  implements OnInit {
+  @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
   @Input() id = ''
   terapeuta:any = ''
 
@@ -14,6 +17,18 @@ export class VerTerapeutaComponent  implements OnInit {
   ngOnInit(): void {
     this.getTerapeuta()
     console.log(this.id)
+
+    //paypal Payment
+    paypal
+      .Buttons({
+        style: {
+          shape: 'pill',
+          color: 'gold',
+          layout: 'horizontal',
+          label: 'paypal',
+        }
+      })
+      .render(this.paypalElement.nativeElement);
   }
 
   getTerapeuta(){

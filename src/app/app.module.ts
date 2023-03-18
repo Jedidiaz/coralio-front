@@ -64,6 +64,7 @@ import { FirstInicioComponent } from './modules/dashboardCliente/first-inicio/fi
 import { VerTerapeutaComponent } from './modules/dashboardCliente/ver-terapeuta/ver-terapeuta.component';
 import { RegisterPacienteComponent } from './modules/auth/register-paciente/register-paciente.component';
 import { RegisterTerapeutaComponent } from './modules/auth/register-terapeuta/register-terapeuta.component';
+import { SuccessPagoComponent } from './modules/dashboardCliente/success-pago/success-pago.component';
 
 
 @NgModule({
@@ -114,6 +115,7 @@ import { RegisterTerapeutaComponent } from './modules/auth/register-terapeuta/re
     VerTerapeutaComponent,
     RegisterPacienteComponent,
     RegisterTerapeutaComponent,
+    SuccessPagoComponent,
   ],
   imports: [
     BrowserModule,

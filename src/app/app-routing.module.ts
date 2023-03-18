@@ -1,3 +1,4 @@
+import { SuccessPagoComponent } from './modules/dashboardCliente/success-pago/success-pago.component';
 import { RegisterTerapeutaComponent } from './modules/auth/register-terapeuta/register-terapeuta.component';
 import { RegisterPacienteComponent } from './modules/auth/register-paciente/register-paciente.component';
 import { BlogsComponent } from './modules/blogs/blogs.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'bar', component: BarTComponent },
   {path: 'admin', component: MainAdminComponent },
   {path: 'primerinicio', component: FirstInicioComponent },
+  {path: 'success', component: SuccessPagoComponent },
 ]
 
 
